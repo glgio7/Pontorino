@@ -1,5 +1,26 @@
 import styled from "styled-components";
 
+const MasterContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	background-color: #f0f0f0;
+
+	width: 100%;
+	min-height: calc(100vh - 80px);
+
+	padding: 5rem;
+	margin-top: 80px;
+
+	@media screen and (max-width: 1024px) {
+		flex-direction: column;
+		align-items: center;
+
+		padding: 5rem 2rem;
+	}
+`;
+
 export const WelcomeContainer = styled.section`
 	width: 100%;
 	height: 100%;
@@ -9,6 +30,9 @@ export const WelcomeContainer = styled.section`
 	justify-content: space-between;
 	article {
 		width: 40%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
 	p,
@@ -66,6 +90,11 @@ export const WelcomeContainer = styled.section`
 			background: transparent;
 
 			border: 1px solid rgba(0, 0, 0, 0.08);
+
+			&:hover {
+				opacity: 1;
+				border: 1px solid rgba(77, 49, 128, 0.5);
+			}
 		}
 	}
 	.welcome-image {
@@ -80,13 +109,7 @@ export const WelcomeContainer = styled.section`
 		border-radius: 50%;
 	}
 
-	h6 {
-		width: 100%;
-		color: #333;
-		margin-top: 1rem;
-	}
-
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 1024px) {
 		width: 100%;
 
 		article {
@@ -109,11 +132,16 @@ export const WelcomeContainer = styled.section`
 `;
 
 export const SponsorsContainer = styled.div`
-	height: 80px;
 	width: 100%;
 
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
+
+	h6 {
+		width: 100%;
+		color: #333;
+	}
 
 	.sponsor-image {
 		width: 144px;
@@ -123,21 +151,12 @@ export const SponsorsContainer = styled.div`
 		object-fit: contain;
 	}
 
-	@media screen and (max-width: 900px) {
-		overflow-x: auto;
+	@media screen and (max-width: 1024px) {
+		padding: 1rem;
 
-		scrollbar-width: none;
+		width: 90%;
 
 		position: relative;
-
-		&:after {
-			position: sticky;
-
-			content: "»»";
-			font-weight: bold;
-
-			right: 3px;
-		}
 	}
 `;
 
@@ -150,7 +169,7 @@ export const SectionContainer = styled.article`
 
 	border-radius: 12px;
 
-	background-color: cadetblue;
+	background: linear-gradient(0deg, #4d3180 20%, rgba(77, 49, 128, 0.3) 130%);
 
 	padding: 5rem 0;
 
@@ -176,4 +195,23 @@ export const SectionContainer = styled.article`
 		display: flex;
 		justify-content: space-around;
 	}
+
+	@media screen and (max-width: 1024px) {
+		padding: 2rem 0;
+
+		.cards-container {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		h2 {
+			width: 80%;
+		}
+
+		p {
+			width: 60%;
+		}
+	}
 `;
+
+export default MasterContainer;

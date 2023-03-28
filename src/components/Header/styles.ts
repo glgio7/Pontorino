@@ -15,6 +15,8 @@ const HeaderContainer = styled.header`
 	position: fixed;
 	top: 0;
 
+	z-index: 99;
+
 	.logo {
 		text-align: left;
 	}
@@ -39,7 +41,7 @@ const HeaderContainer = styled.header`
 
 		align-self: flex-end;
 
-		color: #68ee00;
+		color: #32cd32;
 
 		margin-left: 0.25rem;
 

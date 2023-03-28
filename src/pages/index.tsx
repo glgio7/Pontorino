@@ -1,10 +1,10 @@
-import Container from "../components/Container";
+import MasterContainer from "../styles";
 import ServiceCard from "../components/ServiceCard";
 import * as S from "../styles";
 
 const Home = () => {
 	return (
-		<Container>
+		<MasterContainer>
 			<S.WelcomeContainer>
 				<article>
 					<h2>
@@ -24,9 +24,9 @@ const Home = () => {
 					<button>Try for free »</button>
 				</article>
 				<img src="/img/welcome.jpg" className="welcome-image" />
-				<h6>Lorem ipsum dolor sit amet consectetur.</h6>
 			</S.WelcomeContainer>
 			<S.SponsorsContainer>
+				<h6>Lorem ipsum dolor sit amet consectetur.</h6>
 				<img
 					src="/img/pattern-logo-1.svg"
 					alt="Sponsor"
@@ -86,8 +86,8 @@ const Home = () => {
 							"Lorem ipsum dolor sit amet.",
 							"Lorem ipsum dolor sit amet.",
 						]}
-						title={""}
-						image={""}
+						title={"Lorem ipsum"}
+						image={"/img/verified.svg"}
 					/>
 					<ServiceCard
 						text={[
@@ -95,8 +95,8 @@ const Home = () => {
 							"Lorem ipsum dolor sit amet.",
 							"Lorem ipsum dolor sit amet.",
 						]}
-						title={""}
-						image={""}
+						title={"Ipsum"}
+						image={"/img/clock.svg"}
 					/>
 					<ServiceCard
 						text={[
@@ -104,12 +104,12 @@ const Home = () => {
 							"Lorem ipsum dolor sit amet.",
 							"Lorem ipsum dolor sit amet.",
 						]}
-						title={""}
-						image={""}
+						title={"Lorem"}
+						image={"/img/vacation.svg"}
 					/>
 				</div>
 			</S.SectionContainer>
-		</Container>
+		</MasterContainer>
 	);
 };
 export default Home;
