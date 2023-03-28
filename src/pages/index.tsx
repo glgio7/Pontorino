@@ -1,11 +1,11 @@
 import Container from "../components/Container";
-import StyledHome, { ArticleContainer } from "../styles";
+import * as S from "../styles";
 
 const Home = () => {
 	return (
-		<StyledHome>
+		<S.HomeContainer>
 			<Container>
-				<ArticleContainer>
+				<S.ArticleContainer>
 					<h2>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore,
 						architecto?
@@ -21,10 +21,52 @@ const Home = () => {
 					</p>
 					<button>Schedule demonstration</button>
 					<button>Try for free »</button>
-				</ArticleContainer>
+				</S.ArticleContainer>
 				<img src="/img/welcome.jpg" className="welcome-image" />
+				<S.SponsorsContainer>
+					<img
+						src="/img/pattern-logo-1.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-2.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-3.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-2.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-1.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-3.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-2.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-1.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+				</S.SponsorsContainer>
 			</Container>
-		</StyledHome>
+		</S.HomeContainer>
 	);
 };
 export default Home;

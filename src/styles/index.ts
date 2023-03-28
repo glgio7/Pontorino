@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledHome = styled.div`
+export const HomeContainer = styled.div`
 	.welcome-image {
-		width: 45%;
-		height: 45%;
+		width: 35%;
+		height: 35%;
 
 		aspect-ratio: 1;
 
@@ -106,4 +106,35 @@ export const ArticleContainer = styled.article`
 	}
 `;
 
-export default StyledHome;
+export const SponsorsContainer = styled.div`
+	height: 80px;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+
+	.sponsor-image {
+		width: 144px;
+
+		aspect-ratio: 16/9;
+
+		object-fit: contain;
+	}
+
+	@media screen and (max-width: 900px) {
+		overflow-x: auto;
+
+		scrollbar-width: none;
+
+		position: relative;
+
+		&:after {
+			position: sticky;
+
+			content: "»»";
+			font-weight: bold;
+
+			right: 3px;
+		}
+	}
+`;
