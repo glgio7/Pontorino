@@ -17,17 +17,16 @@ const GlobalCSS = createGlobalStyle`
     text-align: center;
 
     color: inherit;
+
+font-family: "Montserrat Alternates";
   }
   
   html, body{
     width: 100%;
     height: 100%;
 
-    font-family: "Montserrat Alternates", sans-serif;
-
     background-color: #e0e0e0;
     
-    overflow-x: hidden;
 }
 img{
   width: 100%;

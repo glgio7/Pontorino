@@ -1,8 +1,8 @@
-import Section from "../../components/Section";
+import Container from "../../components/Container";
 
 const Pricing = () => {
 	return (
-		<Section>
+		<Container>
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis et
 			aut, ipsa alias pariatur molestias unde eaque deleniti. Ut illum nisi
 			accusamus aperiam. Veniam ea ipsum omnis. Iste blanditiis voluptatem
@@ -10,7 +10,7 @@ const Pricing = () => {
 			beatae dignissimos suscipit eligendi quibusdam, ratione quas porro laborum
 			laudantium! Quo, veritatis accusamus. Quas amet expedita exercitationem
 			beatae.
-		</Section>
+		</Container>
 	);
 };
 export default Pricing;
