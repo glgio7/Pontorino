@@ -85,7 +85,7 @@ export const Navigation = styled.nav<{ active: boolean }>`
 		transition: all 250ms;
 
 		&:hover {
-			color: #68ff00;
+			color: #32cd32;
 		}
 	}
 

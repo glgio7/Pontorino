@@ -131,35 +131,6 @@ export const WelcomeContainer = styled.section`
 	}
 `;
 
-export const SponsorsContainer = styled.div`
-	width: 100%;
-
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-
-	h6 {
-		width: 100%;
-		color: #333;
-	}
-
-	.sponsor-image {
-		width: 144px;
-
-		aspect-ratio: 16/9;
-
-		object-fit: contain;
-	}
-
-	@media screen and (max-width: 1024px) {
-		padding: 1rem;
-
-		width: 90%;
-
-		position: relative;
-	}
-`;
-
 export const SectionContainer = styled.section`
 	width: 100%;
 	height: 100%;
@@ -204,6 +175,10 @@ export const SectionContainer = styled.section`
 
 		width: 80%;
 	}
+	article p {
+		width: 80%;
+		text-align: left;
+	}
 
 	.image-content {
 		margin-top: 1rem;
@@ -216,9 +191,14 @@ export const SectionContainer = styled.section`
 		border-radius: 20px;
 	}
 
+	article,
+	.section__list {
+		margin-top: 2rem;
+	}
+
 	.section__list {
 		text-align: left;
-		padding-left: 1rem;
+		padding-left: 5rem;
 		width: 50%;
 	}
 
@@ -256,15 +236,49 @@ export const SectionContainer = styled.section`
 		align-self: flex-start;
 	}
 
+	.schedule-container {
+		width: 50%;
+	}
+
+	button {
+		cursor: pointer;
+
+		height: 54px;
+
+		font-size: 1rem;
+		line-height: 1rem;
+		font-weight: 700;
+
+		padding: 9px 15px;
+
+		border-radius: 12px;
+
+		margin-top: 3rem;
+
+		background: linear-gradient(
+			45deg,
+			#4d3180 20%,
+			rgba(77, 49, 128, 0.3) 130%
+		);
+		color: #fff;
+
+		transition: all 150ms;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
 	@media screen and (max-width: 1024px) {
 		padding: 2rem 0;
 
-		h2 {
-			width: 80%;
+		.section__title,
+		.section__subtitle {
+			width: 100%;
 		}
 
-		p {
-			width: 60%;
+		.section__subtitle {
+			width: 90%;
 		}
 
 		article {
@@ -276,13 +290,39 @@ export const SectionContainer = styled.section`
 			text-align: center;
 		}
 
+		article p {
+			text-align: center;
+		}
+
 		.section__list {
+			padding-left: 0;
 			width: auto;
 		}
 
 		.section__list h4 {
 			margin-top: initial;
 		}
+	}
+`;
+
+export const SponsorsContainer = styled.div`
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	h6 {
+		width: 100%;
+		color: #333;
+	}
+
+	.sponsor-image {
+		width: 144px;
+
+		aspect-ratio: 16/9;
+
+		object-fit: contain;
 	}
 `;
 
@@ -297,6 +337,137 @@ export const CardsContainer = styled.div`
 	@media screen and (max-width: 1024px) {
 		flex-direction: column;
 		align-items: center;
+	}
+`;
+
+export const Wrapper = styled.div`
+	flex-direction: column;
+
+	margin-top: 2rem;
+
+	width: 100%;
+	height: fit-content;
+
+	.wrapper__btn {
+		position: relative;
+
+		margin: 0 auto;
+
+		display: flex;
+		justify-content: space-evenly;
+
+		width: 60%;
+
+		&::after {
+			position: absolute;
+
+			content: "";
+			background: rgba(0, 0, 0, 0.1);
+
+			height: 1px;
+			width: 165%;
+
+			bottom: 0;
+			left: -32.5%;
+		}
+	}
+
+	.wrapper__btn button {
+		color: #333;
+
+		position: relative;
+
+		margin-top: 0;
+
+		width: 25%;
+		height: 2rem;
+
+		font-weight: normal;
+
+		background: transparent;
+
+		&:hover {
+			color: #32cd32;
+		}
+
+		&::after {
+			opacity: 0;
+
+			position: absolute;
+
+			content: "";
+			height: 6px;
+			width: 100%;
+			bottom: -6px;
+			left: 0;
+			background: #32cd32;
+			transition: all 300ms;
+		}
+	}
+
+	.wrapper__btn button:focus {
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	.carousel {
+		width: 100%;
+
+		overflow-x: auto;
+
+		scrollbar-width: none;
+
+		margin-top: 6px;
+		padding: 2rem 0rem;
+	}
+
+	.container {
+		height: 100%;
+		display: flex;
+		width: max-content;
+	}
+
+	.container__item {
+		display: flex;
+		justify-content: space-around;
+		width: calc(100vw - 10rem);
+	}
+	.container__item img {
+		width: 40%;
+		aspect-ratio: 16/9;
+		object-fit: cover;
+		border-radius: 10px;
+	}
+
+	@media screen and (max-width: 1024px) {
+		.wrapper__btn {
+			width: 100%;
+
+			&::after {
+				max-width: 100%;
+				left: 0;
+				bottom: -18px;
+			}
+		}
+		.wrapper__btn button {
+			font-size: 0.8rem;
+
+			&::after {
+				bottom: -18px;
+			}
+		}
+		.container__item {
+			display: flex;
+			justify-content: space-around;
+			width: calc(100vw - 5rem);
+		}
+
+		.container__item img {
+			width: 45%;
+			aspect-ratio: 9/16;
+			object-fit: cover;
+		}
 	}
 `;
 

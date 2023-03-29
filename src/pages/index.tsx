@@ -1,8 +1,41 @@
 import MasterContainer from "../styles";
 import ServiceCard from "../components/ServiceCard";
 import * as S from "../styles";
+import { useRef } from "react";
 
 const Home = () => {
+	const carousel = useRef<HTMLDivElement>(null);
+
+	const handleCarouselScroll = (id: number) => {
+		switch (id) {
+			case 1:
+				carousel.current!.scrollLeft = 0;
+				break;
+			case 2:
+				carousel.current!.scrollLeft =
+					carousel.current!.scrollWidth -
+					(carousel.current!.scrollWidth / 4) * 3;
+				break;
+			case 3:
+				carousel.current!.scrollLeft =
+					carousel.current!.scrollWidth -
+					(carousel.current!.scrollWidth / 4) * 2;
+				console.log(
+					carousel.current!.scrollLeft,
+					"scrolled",
+					window.innerWidth,
+					"telawidth",
+					carousel.current!.scrollWidth,
+					"scrollMax"
+				);
+				break;
+			case 4:
+				carousel.current!.scrollLeft =
+					carousel.current!.scrollWidth - carousel.current!.scrollWidth / 4;
+				break;
+		}
+	};
+
 	return (
 		<MasterContainer>
 			<S.WelcomeContainer>
@@ -16,7 +49,7 @@ const Home = () => {
 						Blanditiis, nemo.
 					</p>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eum
+						Lorem ipsum dolor sit amset consectetur adipisicing elit. Ipsa eum
 						officiis alias molestiae vel facilis quasi dignissimos nulla unde
 						voluptatum?
 					</p>
@@ -26,7 +59,7 @@ const Home = () => {
 				<img src="/img/welcome.jpg" className="welcome-image" />
 			</S.WelcomeContainer>
 			<S.SponsorsContainer>
-				<h6>Lorem ipsum dolor sit amet consectetur.</h6>
+				<h6>Lorem ipsum dolor sit amet csonsectetur.</h6>
 				<img
 					src="/img/pattern-logo-1.svg"
 					alt="Sponsor"
@@ -82,16 +115,16 @@ const Home = () => {
 				<S.CardsContainer>
 					<ServiceCard
 						text={[
-							"Lorem ipsum dolor sit amet.",
-							"Lorem ipsum dolor sit amet.",
-							"Lorem ipsum dolor sit amet.",
+							"Lorem ipsum dolor sist amet.",
+							"Lorem ipsum dolor ssist amet.",
+							"Lorem ipsum dolor sa	it amet.",
 						]}
 						title={"Lorem ipsum"}
 						image={"/img/verified.svg"}
 					/>
 					<ServiceCard
 						text={[
-							"Lorem ipsum dolor sit amet.",
+							"Lorem ipsum dolor sit wamet.",
 							"Lorem ipsum dolor sit amet.",
 							"Lorem ipsum dolor sit amet.",
 						]}
@@ -101,8 +134,8 @@ const Home = () => {
 					<ServiceCard
 						text={[
 							"Lorem ipsum dolor sit amet.",
-							"Lorem ipsum dolor sit amet.",
-							"Lorem ipsum dolor sit amet.",
+							"Lorem ipsum dolor sit awmet.",
+							"Lorem ipsum dolor sit amwet.",
 						]}
 						title={"Lorem"}
 						image={"/img/vacation.svg"}
@@ -183,6 +216,47 @@ const Home = () => {
 						</p>
 					</li>
 				</ul>
+				<div className="schedule-demonstration">
+					<button>Schedule demonstration</button>
+				</div>
+			</S.SectionContainer>
+			<S.SectionContainer>
+				<h2 className="section__title">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+					voluptatem tempore optio sapiente.
+				</h2>
+				<S.Wrapper>
+					<div className="wrapper__btn">
+						<button onClick={() => handleCarouselScroll(1)}>Lorem optio</button>
+						<button onClick={() => handleCarouselScroll(2)}>Enim Aude</button>
+						<button onClick={() => handleCarouselScroll(3)}>Modi e Enim</button>
+						<button onClick={() => handleCarouselScroll(4)}>Asperiores</button>
+					</div>
+					<div className="carousel" ref={carousel}>
+						<div className="container">
+							<div className="container__item">
+								<img src="/img/service.jpg" alt="" />
+								<img src="/img/service2.jpg" alt="" />
+							</div>
+							<div className="container__item">
+								<img src="/img/service.jpg" alt="" />
+								<img src="/img/service2.jpg" alt="" />
+							</div>
+							<div className="container__item">
+								<img src="/img/service.jpg" alt="" />
+								<img src="/img/service2.jpg" alt="" />
+							</div>
+							<div className="container__item">
+								<img src="/img/service.jpg" alt="" />
+								<img src="/img/service2.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</S.Wrapper>
+
+				<div className="schedule-demonstration">
+					<button>Schedule demonstration</button>
+				</div>
 			</S.SectionContainer>
 		</MasterContainer>
 	);

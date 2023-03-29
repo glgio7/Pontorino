@@ -18,9 +18,10 @@ const StyledServiceCard = styled.ul`
 
 	position: relative;
 
-	h2,
-	p {
+	.card__title,
+	.card__description {
 		width: 100%;
+		text-align: center;
 	}
 
 	.icon-card {
@@ -97,7 +98,7 @@ const StyledServiceCard = styled.ul`
 	}
 
 	@media screen and (max-width: 1024px) {
-		width: 80%;
+		width: 90%;
 
 		align-items: flex-start;
 
@@ -106,11 +107,15 @@ const StyledServiceCard = styled.ul`
 		padding: inherit 0;
 
 		li {
-			padding: 0 2rem;
+			padding: 0 1rem;
 		}
 
 		.icon-card {
 			align-self: center;
+		}
+
+		.card__description {
+			text-align: left;
 		}
 
 		.btn {
