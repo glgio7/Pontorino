@@ -69,17 +69,17 @@ const Home = () => {
 				/>
 			</S.SponsorsContainer>
 			<S.SectionContainer>
-				<h2>
+				<h2 className="section__title">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
 					voluptatem tempore optio aliquam eius quas animi sapiente ratione
 					numquam necessitatibus?
 				</h2>
-				<p>
+				<p className="section__subtitle">
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
 					Exercitationem, dolores.
 				</p>
 
-				<div className="cards-container">
+				<S.CardsContainer>
 					<ServiceCard
 						text={[
 							"Lorem ipsum dolor sit amet.",
@@ -107,7 +107,82 @@ const Home = () => {
 						title={"Lorem"}
 						image={"/img/vacation.svg"}
 					/>
-				</div>
+				</S.CardsContainer>
+			</S.SectionContainer>
+			<S.SectionContainer>
+				<article>
+					<h2>
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit vel vitae
+						dolore.
+					</h2>
+					<img
+						className="image-content"
+						src="/img/image-content.jpg"
+						alt="Lorem"
+					/>
+				</article>
+				<ul className="section__list">
+					<li>
+						<h4>
+							<span className="material-symbols-outlined">check_circle</span>
+							Lorem ipsum dolor
+						</h4>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+							minus error beatae sit laudantium totam.
+						</p>
+					</li>
+					<li>
+						<h4>
+							<span className="material-symbols-outlined">check_circle</span>
+							Lorem ipsum dolor
+						</h4>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+							minus error beatae sit laudantium totam.
+						</p>
+					</li>
+					<li>
+						<h4>
+							<span className="material-symbols-outlined">check_circle</span>
+							Lorem ipsum dolor
+						</h4>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+							minus error beatae sit laudantium totam.
+						</p>
+					</li>
+					<li>
+						<h4>
+							<span className="material-symbols-outlined">check_circle</span>
+							Lorem ipsum dolor
+						</h4>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+							minus error beatae sit laudantium totam.
+						</p>
+					</li>
+					<li>
+						<h4>
+							<span className="material-symbols-outlined">check_circle</span>
+							Lorem ipsum dolor
+						</h4>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+							minus error beatae sit laudantium totam.
+						</p>
+					</li>
+					<li>
+						<h4>
+							<span className="material-symbols-outlined">check_circle</span>
+							Lorem ipsum dolor
+						</h4>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+							minus error beatae sit laudantium totam.
+						</p>
+					</li>
+				</ul>
 			</S.SectionContainer>
 		</MasterContainer>
 	);

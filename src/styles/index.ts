@@ -160,49 +160,104 @@ export const SponsorsContainer = styled.div`
 	}
 `;
 
-export const SectionContainer = styled.article`
+export const SectionContainer = styled.section`
 	width: 100%;
+	height: 100%;
 
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 
 	border-radius: 12px;
 
-	background: linear-gradient(0deg, #4d3180 20%, rgba(77, 49, 128, 0.3) 130%);
+	/* background: linear-gradient(0deg, #4d3180 20%, rgba(77, 49, 128, 0.3) 130%); */
 
 	padding: 5rem 0;
 
-	h2 {
+	.section__title {
 		font-size: 1.75rem;
+
+		line-height: 3rem;
 
 		width: 60%;
 
 		color: #333;
 	}
 
-	p {
-		width: 40%;
-
+	.section__subtitle {
+		width: 60%;
 		margin-top: 1rem;
 	}
 
-	.cards-container {
-		padding: 5rem 0;
+	article {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	article h2 {
+		font-size: 2rem;
+		line-height: 3rem;
+		text-align: left;
+
+		color: #333;
+
+		width: 80%;
+	}
+
+	.image-content {
+		margin-top: 1rem;
+
+		aspect-ratio: 16/9;
+		object-fit: cover;
 
 		width: 100%;
 
-		display: flex;
-		justify-content: space-around;
+		border-radius: 20px;
+	}
+
+	.section__list {
+		text-align: left;
+		padding-left: 1rem;
+		width: 50%;
+	}
+
+	.section__list li {
+		display: inline-flex;
+		flex-wrap: wrap;
+		margin-block: 1rem;
+		align-items: center;
+		width: 100%;
+	}
+
+	.section__list h4 {
+		margin: 0.25rem;
+		margin-top: -0.25rem;
+		width: 100%;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.section__list span {
+		margin-right: 0.25rem;
+	}
+	.section__list p {
+		margin: 0;
+		text-align: left;
+		margin-left: 2rem;
+		width: 90%;
+	}
+
+	.material-symbols-outlined {
+		font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+		height: 1.5rem;
+		width: 1.5rem;
+		color: #32cd32;
+		align-self: flex-start;
 	}
 
 	@media screen and (max-width: 1024px) {
 		padding: 2rem 0;
-
-		.cards-container {
-			flex-direction: column;
-			align-items: center;
-		}
 
 		h2 {
 			width: 80%;
@@ -211,6 +266,37 @@ export const SectionContainer = styled.article`
 		p {
 			width: 60%;
 		}
+
+		article {
+			width: 100%;
+		}
+
+		article h2 {
+			width: 100%;
+			text-align: center;
+		}
+
+		.section__list {
+			width: auto;
+		}
+
+		.section__list h4 {
+			margin-top: initial;
+		}
+	}
+`;
+
+export const CardsContainer = styled.div`
+	padding: 5rem 0;
+
+	width: 100%;
+
+	display: flex;
+	justify-content: space-around;
+
+	@media screen and (max-width: 1024px) {
+		flex-direction: column;
+		align-items: center;
 	}
 `;
 

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const StyledServiceCard = styled.ul`
 	width: 25%;
-	/* height: 380px; */
+
+	text-align: center;
 
 	display: flex;
 	flex-direction: column;
@@ -100,7 +101,7 @@ const StyledServiceCard = styled.ul`
 
 		align-items: flex-start;
 
-		margin: 1rem 0;
+		margin: 2rem 0;
 
 		padding: inherit 0;
 
