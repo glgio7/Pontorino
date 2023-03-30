@@ -36,14 +36,10 @@ const HeaderContainer = styled.header`
 		font-size: 2.15rem;
 		line-height: 2.15rem;
 
-		font-family: "Alkatra", cursive;
-		font-weight: normal;
-
-		align-self: flex-end;
+		font-family: "Montserrat Alternates", cursive;
+		font-weight: 600;
 
 		color: #32cd32;
-
-		margin-left: 0.25rem;
 
 		border-radius: 18px;
 	}

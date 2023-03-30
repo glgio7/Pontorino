@@ -18,12 +18,6 @@ const StyledServiceCard = styled.ul`
 
 	position: relative;
 
-	.card__title,
-	.card__description {
-		width: 100%;
-		text-align: center;
-	}
-
 	.icon-card {
 		width: 54px;
 		height: 54px;
@@ -38,6 +32,15 @@ const StyledServiceCard = styled.ul`
 		border-radius: 50%;
 
 		background-color: #32cd32;
+	}
+
+	.card__title,
+	.card__description {
+		width: 100%;
+	}
+
+	h2 {
+		line-height: 3rem;
 	}
 
 	li {
@@ -55,36 +58,16 @@ const StyledServiceCard = styled.ul`
 		align-self: flex-start;
 	}
 
-	h2 {
-		min-height: 5rem;
+	.card__description {
+		text-align: left;
+		margin-left: 0.25rem;
 	}
 
-	p {
-		margin: 0;
-		margin-left: 0.25rem;
-		font-size: 1rem;
+	a {
+		align-self: flex-start;
 	}
 
 	.btn {
-		cursor: pointer;
-
-		height: 54px !important;
-
-		display: flex;
-		align-items: center;
-
-		align-self: flex-start;
-
-		font-size: 1rem;
-		line-height: 1rem;
-		font-weight: bold;
-
-		padding: 0 15px;
-
-		border-radius: 12px;
-
-		margin-top: 2rem;
-
 		color: #4d3180;
 		background: transparent;
 
@@ -93,6 +76,7 @@ const StyledServiceCard = styled.ul`
 		transition: all 300ms;
 
 		&:hover {
+			opacity: 1;
 			border: 1px solid rgba(77, 49, 128, 0.5);
 		}
 	}
@@ -106,19 +90,15 @@ const StyledServiceCard = styled.ul`
 
 		padding: inherit 0;
 
-		li {
-			padding: 0 1rem;
-		}
-
 		.icon-card {
 			align-self: center;
 		}
 
-		.card__description {
-			text-align: left;
+		li {
+			padding: 0;
 		}
 
-		.btn {
+		a {
 			align-self: center;
 		}
 	}

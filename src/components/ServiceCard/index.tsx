@@ -1,3 +1,4 @@
+import Button from "../Button";
 import StyledServiceCard from "./styles";
 
 type ServiceCardProps = {
@@ -17,7 +18,9 @@ const ServiceCard = ({ text, title, image }: ServiceCardProps) => {
 					<p className="card__description">{text}</p>
 				</li>
 			))}
-			<a className="btn">Learn more »</a>
+			<a href="">
+				<Button className="btn">Learn more »</Button>
+			</a>
 		</StyledServiceCard>
 	);
 };

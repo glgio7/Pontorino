@@ -10,20 +10,39 @@ const MasterContainer = styled.div`
 	width: 100%;
 	min-height: calc(100vh - 80px);
 
-	padding: 5rem;
 	margin-top: 80px;
+
+	.primary-btn,
+	.secondary-btn {
+		height: 54px;
+		width: 49.5%;
+
+		margin-top: 2rem;
+	}
+
+	.secondary-btn {
+		color: #4d3180;
+		background: transparent;
+
+		border: 1px solid rgba(0, 0, 0, 0.08);
+
+		&:hover {
+			opacity: 1;
+			border: 1px solid rgba(77, 49, 128, 0.5);
+		}
+	}
 
 	@media screen and (max-width: 1024px) {
 		flex-direction: column;
 		align-items: center;
-
-		padding: 5rem 2rem;
 	}
 `;
 
 export const WelcomeContainer = styled.section`
 	width: 100%;
 	height: 100%;
+
+	padding: 5rem;
 
 	display: flex;
 	flex-wrap: wrap;
@@ -55,26 +74,6 @@ export const WelcomeContainer = styled.section`
 	p:first-of-type {
 		font-weight: 600;
 	}
-
-	.primary-btn,
-	.secondary-btn {
-		height: 54px;
-		width: 49.5%;
-
-		margin-top: 2rem;
-	}
-
-	.secondary-btn {
-		color: #4d3180;
-		background: transparent;
-
-		border: 1px solid rgba(0, 0, 0, 0.08);
-
-		&:hover {
-			opacity: 1;
-			border: 1px solid rgba(77, 49, 128, 0.5);
-		}
-	}
 	.welcome-image {
 		width: 35%;
 		height: 35%;
@@ -89,6 +88,8 @@ export const WelcomeContainer = styled.section`
 
 	@media screen and (max-width: 1024px) {
 		width: 100%;
+
+		padding: 5rem 2rem;
 
 		article {
 			width: 100%;
@@ -114,19 +115,38 @@ export const WelcomeContainer = styled.section`
 	}
 `;
 
+export const SponsorsContainer = styled.div`
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	h6 {
+		width: 100%;
+		color: #333;
+	}
+
+	.sponsor-image {
+		width: 144px;
+
+		aspect-ratio: 16/9;
+
+		object-fit: contain;
+	}
+`;
+
 export const SectionContainer = styled.section`
 	width: 100%;
 	height: 100%;
+
+	padding: 5rem;
 
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 
 	border-radius: 12px;
-
-	/* background: linear-gradient(0deg, #4d3180 20%, rgba(77, 49, 128, 0.3) 130%); */
-
-	padding: 5rem 0;
 
 	.section__title {
 		font-size: 1.75rem;
@@ -220,20 +240,17 @@ export const SectionContainer = styled.section`
 	}
 
 	.schedule-container {
-		width: 50%;
+		width: 40%;
 	}
-
-	button {
-		height: 54px;
-
-		font-size: 1rem;
-		line-height: 1rem;
-
-		margin-top: 3rem;
-	}
+	/* 
+	.banner-container {
+		
+		height: 320px;
+		background-color: orange;
+	} */
 
 	@media screen and (max-width: 1024px) {
-		padding: 2rem 0;
+		padding: 5rem 2rem;
 
 		.section__title,
 		.section__subtitle {
@@ -265,27 +282,9 @@ export const SectionContainer = styled.section`
 		.section__list h4 {
 			margin-top: initial;
 		}
-	}
-`;
-
-export const SponsorsContainer = styled.div`
-	width: 100%;
-
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-
-	h6 {
-		width: 100%;
-		color: #333;
-	}
-
-	.sponsor-image {
-		width: 144px;
-
-		aspect-ratio: 16/9;
-
-		object-fit: contain;
+		.schedule-container {
+			width: 100%;
+		}
 	}
 `;
 
@@ -430,6 +429,58 @@ export const Wrapper = styled.div`
 			width: 45%;
 			aspect-ratio: 9/16;
 			object-fit: cover;
+		}
+	}
+`;
+
+export const BannerContainer = styled.ul`
+	width: 100%;
+	height: 320px;
+
+	background-image: url("/img/banner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	padding: 2rem 5rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	li {
+		width: 30%;
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		color: #fff;
+	}
+
+	li h4 {
+		font-size: 2.5rem;
+		font-weight: bold;
+
+		&::first-line {
+			color: #32cd32;
+			text-shadow: 0px 0px 10px #000;
+		}
+	}
+
+	li span {
+		font-size: 0.85rem;
+		margin-top: 0.15rem;
+	}
+
+	@media screen and (max-width: 1024px) {
+		height: auto;
+		flex-direction: column;
+
+		li {
+			width: 100%;
+			margin-block: 1rem;
 		}
 	}
 `;

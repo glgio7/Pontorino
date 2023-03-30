@@ -50,50 +50,51 @@ const Home = () => {
 					<Button className="secondary-btn">Try for free »</Button>
 				</article>
 				<img src="/img/welcome.jpg" className="welcome-image" />
+
+				<S.SponsorsContainer>
+					<h6>Lorem ipsum dolor sit amet csonsectetur.</h6>
+					<img
+						src="/img/pattern-logo-1.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-2.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-3.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-2.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-1.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-3.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-2.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+					<img
+						src="/img/pattern-logo-1.svg"
+						alt="Sponsor"
+						className="sponsor-image"
+					/>
+				</S.SponsorsContainer>
 			</S.WelcomeContainer>
-			<S.SponsorsContainer>
-				<h6>Lorem ipsum dolor sit amet csonsectetur.</h6>
-				<img
-					src="/img/pattern-logo-1.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-				<img
-					src="/img/pattern-logo-2.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-				<img
-					src="/img/pattern-logo-3.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-				<img
-					src="/img/pattern-logo-2.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-				<img
-					src="/img/pattern-logo-1.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-				<img
-					src="/img/pattern-logo-3.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-				<img
-					src="/img/pattern-logo-2.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-				<img
-					src="/img/pattern-logo-1.svg"
-					alt="Sponsor"
-					className="sponsor-image"
-				/>
-			</S.SponsorsContainer>
 			<S.SectionContainer>
 				<h2 className="section__title">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
@@ -209,7 +210,9 @@ const Home = () => {
 						</p>
 					</li>
 				</ul>
-				<Button className="primary-btn">Schedule demonstration</Button>
+				<div className="schedule-container">
+					<Button className="primary-btn">Schedule demonstration</Button>
+				</div>
 			</S.SectionContainer>
 			<S.SectionContainer>
 				<h2 className="section__title">
@@ -244,8 +247,33 @@ const Home = () => {
 						</div>
 					</div>
 				</S.Wrapper>
-				<Button className="primary-btn">Schedule demonstration</Button>
+				<div className="schedule-container">
+					<Button className="primary-btn">Schedule demonstration</Button>
+				</div>
 			</S.SectionContainer>
+			<S.BannerContainer>
+				<li>
+					<h4>+ 10 ipsum dolor sit amet.</h4>
+					<span>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident,
+						aliquam.
+					</span>
+				</li>
+				<li>
+					<h4>+ 25 ipsum pop flip sit amet.</h4>
+					<span>
+						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
+						king kong
+					</span>
+				</li>
+				<li>
+					<h4>+ 50 ipsum flip flop sit amet.</h4>
+					<span>
+						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
+						king kong
+					</span>
+				</li>
+			</S.BannerContainer>
 		</MasterContainer>
 	);
 };
