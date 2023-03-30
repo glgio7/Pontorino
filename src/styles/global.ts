@@ -18,7 +18,7 @@ const GlobalCSS = createGlobalStyle`
 
     color: inherit;
 
-font-family: "Montserrat Alternates";
+    font-family: "Montserrat Alternates";
   }
   
   html, body{
@@ -28,8 +28,13 @@ font-family: "Montserrat Alternates";
     background-color: #e0e0e0;
     
 }
+
 img{
   width: 100%;
+}
+
+button {
+  cursor: pointer;
 }
 
 

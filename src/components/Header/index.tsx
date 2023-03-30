@@ -4,6 +4,7 @@ import menu from "../../assets/menu.svg";
 import close from "../../assets/close-btn.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Button from "../Button";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -22,33 +23,31 @@ const Header = () => {
 				className="menu"
 				onClick={() => setMenuOpen(true)}
 			/>
-			{
-				<Navigation active={menuOpen}>
-					<img
-						src={close}
-						alt="Close"
-						className="close-btn"
-						onClick={() => setMenuOpen(false)}
-					/>
-					<ul>
-						<Link to={"/about"}>
-							<li>About</li>
-						</Link>
-						<Link to={"/pricing"}>
-							<li>Pricing</li>
-						</Link>
-						<Link to={"/"}>
-							<li>Partnership</li>
-						</Link>
-						<Link to={"/"}>
-							<li>Blog</li>
-						</Link>
-					</ul>
-					<button>Login</button>
-					<button>Clock in</button>
-					<button className="demo-btn">Demonstration</button>
-				</Navigation>
-			}
+			<Navigation active={menuOpen}>
+				<img
+					src={close}
+					alt="Close"
+					className="close-btn"
+					onClick={() => setMenuOpen(false)}
+				/>
+				<ul>
+					<Link to={"/about"}>
+						<li>About</li>
+					</Link>
+					<Link to={"/pricing"}>
+						<li>Pricing</li>
+					</Link>
+					<Link to={"/"}>
+						<li>Partnership</li>
+					</Link>
+					<Link to={"/"}>
+						<li>Blog</li>
+					</Link>
+				</ul>
+				<Button className="white-btn">Login</Button>
+				<Button className="white-btn">Clock in</Button>
+				<Button className="demo-btn">Demonstration</Button>
+			</Navigation>
 		</HeaderContainer>
 	);
 };

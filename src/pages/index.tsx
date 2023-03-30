@@ -2,6 +2,7 @@ import MasterContainer from "../styles";
 import ServiceCard from "../components/ServiceCard";
 import * as S from "../styles";
 import { useRef } from "react";
+import Button from "../components/Button";
 
 const Home = () => {
 	const carousel = useRef<HTMLDivElement>(null);
@@ -20,14 +21,6 @@ const Home = () => {
 				carousel.current!.scrollLeft =
 					carousel.current!.scrollWidth -
 					(carousel.current!.scrollWidth / 4) * 2;
-				console.log(
-					carousel.current!.scrollLeft,
-					"scrolled",
-					window.innerWidth,
-					"telawidth",
-					carousel.current!.scrollWidth,
-					"scrollMax"
-				);
 				break;
 			case 4:
 				carousel.current!.scrollLeft =
@@ -53,8 +46,8 @@ const Home = () => {
 						officiis alias molestiae vel facilis quasi dignissimos nulla unde
 						voluptatum?
 					</p>
-					<button>Schedule demonstration</button>
-					<button>Try for free »</button>
+					<Button className="primary-btn">Schedule demonstration</Button>
+					<Button className="secondary-btn">Try for free »</Button>
 				</article>
 				<img src="/img/welcome.jpg" className="welcome-image" />
 			</S.WelcomeContainer>
@@ -216,9 +209,7 @@ const Home = () => {
 						</p>
 					</li>
 				</ul>
-				<div className="schedule-demonstration">
-					<button>Schedule demonstration</button>
-				</div>
+				<Button className="primary-btn">Schedule demonstration</Button>
 			</S.SectionContainer>
 			<S.SectionContainer>
 				<h2 className="section__title">
@@ -253,10 +244,7 @@ const Home = () => {
 						</div>
 					</div>
 				</S.Wrapper>
-
-				<div className="schedule-demonstration">
-					<button>Schedule demonstration</button>
-				</div>
+				<Button className="primary-btn">Schedule demonstration</Button>
 			</S.SectionContainer>
 		</MasterContainer>
 	);

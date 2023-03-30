@@ -56,45 +56,23 @@ export const WelcomeContainer = styled.section`
 		font-weight: 600;
 	}
 
-	button {
-		cursor: pointer;
-
+	.primary-btn,
+	.secondary-btn {
 		height: 54px;
-		width: 48%;
-
-		font-size: 1rem;
-		line-height: 1rem;
-		font-weight: 700;
-
-		padding: 0 6px;
-
-		border-radius: 12px;
+		width: 49.5%;
 
 		margin-top: 2rem;
+	}
 
-		background: linear-gradient(
-			45deg,
-			#4d3180 20%,
-			rgba(77, 49, 128, 0.3) 130%
-		);
-		color: #fff;
+	.secondary-btn {
+		color: #4d3180;
+		background: transparent;
 
-		transition: all 150ms;
+		border: 1px solid rgba(0, 0, 0, 0.08);
 
 		&:hover {
-			opacity: 0.8;
-		}
-
-		&:last-of-type {
-			color: #4d3180;
-			background: transparent;
-
-			border: 1px solid rgba(0, 0, 0, 0.08);
-
-			&:hover {
-				opacity: 1;
-				border: 1px solid rgba(77, 49, 128, 0.5);
-			}
+			opacity: 1;
+			border: 1px solid rgba(77, 49, 128, 0.5);
 		}
 	}
 	.welcome-image {
@@ -116,15 +94,20 @@ export const WelcomeContainer = styled.section`
 			width: 100%;
 		}
 
-		button {
-			width: 62%;
+		.primary-btn,
+		.secondary-btn {
 			height: 72px;
 			margin-bottom: 4rem;
-
-			&:last-of-type {
-				width: 35%;
-			}
 		}
+
+		.primary-btn {
+			width: 64%;
+		}
+
+		.secondary-btn {
+			width: 35%;
+		}
+
 		.welcome-image {
 			width: 100%;
 		}
@@ -241,32 +224,12 @@ export const SectionContainer = styled.section`
 	}
 
 	button {
-		cursor: pointer;
-
 		height: 54px;
 
 		font-size: 1rem;
 		line-height: 1rem;
-		font-weight: 700;
-
-		padding: 9px 15px;
-
-		border-radius: 12px;
 
 		margin-top: 3rem;
-
-		background: linear-gradient(
-			45deg,
-			#4d3180 20%,
-			rgba(77, 49, 128, 0.3) 130%
-		);
-		color: #fff;
-
-		transition: all 150ms;
-
-		&:hover {
-			opacity: 0.8;
-		}
 	}
 
 	@media screen and (max-width: 1024px) {

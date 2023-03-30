@@ -93,50 +93,24 @@ export const Navigation = styled.nav<{ active: boolean }>`
 		margin-left: 12px;
 	}
 
-	button {
-		cursor: pointer;
-
-		height: 44px;
-
-		font-size: 14px;
-
-		&:hover {
-			opacity: 0.8;
-		}
-
-		min-width: 80px;
+	.white-btn {
+		background: #fff;
+		color: #4d3180;
 
 		border: 1px solid rgba(0, 0, 0, 0.08);
-
 		border-radius: 0 12px 12px 0;
 
-		background-color: transparent;
-		color: #4d3180;
-	}
+		font-weight: normal;
 
-	button:first-of-type {
-		border-radius: 12px 0 0 12px;
+		&:first-of-type {
+			border-radius: 12px 0 0 12px;
+		}
 	}
 
 	.demo-btn {
 		min-width: 128px;
 
 		margin-left: 12px;
-
-		border-radius: 12px;
-		border: none;
-
-		padding: 6px 15px;
-		font-weight: bold;
-
-		background: linear-gradient(
-			45deg,
-			#4d3180 20%,
-			rgba(77, 49, 128, 0.3) 130%
-		);
-		color: #fff;
-
-		transition: all 150ms;
 	}
 
 	.close-btn {
@@ -198,15 +172,12 @@ export const Navigation = styled.nav<{ active: boolean }>`
 			width: 90%;
 		}
 
-		button {
+		.demo-btn,
+		.white-btn,
+		.white-btn:first-of-type {
 			border-radius: 12px;
 			margin-block: 0.25rem;
 			width: 100%;
-		}
-
-		button,
-		button:first-of-type {
-			border-radius: 12px;
 		}
 
 		.demo-btn {
