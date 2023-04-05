@@ -46,7 +46,9 @@ const Header = () => {
 						<li>Blog</li>
 					</Link>
 				</ul>
+				<Link to={"/login"}>
 				<Button className="white-btn">Login</Button>
+				</Link>
 				<Link to={"/clockin"}>
 					<Button className="white-btn">Clock in</Button>
 				</Link>
