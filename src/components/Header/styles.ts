@@ -17,31 +17,14 @@ const HeaderContainer = styled.header`
 
 	z-index: 99;
 
-	.logo {
-		text-align: left;
-	}
-
 	h1 {
 		display: inline-flex;
 		align-items: center;
 		height: 54px;
 	}
 
-	.logo__image {
-		width: 42px;
+	.logo {
 		height: 42px;
-	}
-
-	.logo__title {
-		font-size: 2.15rem;
-		line-height: 2.15rem;
-
-		font-family: "Montserrat Alternates", cursive;
-		font-weight: 600;
-
-		color: #32cd32;
-
-		border-radius: 18px;
 	}
 
 	.menu {

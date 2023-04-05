@@ -1,5 +1,4 @@
 import HeaderContainer, { Navigation } from "./styles";
-import logo from "../../assets/clock-watch.svg";
 import menu from "../../assets/menu.svg";
 import close from "../../assets/close-btn.svg";
 import { Link } from "react-router-dom";
@@ -11,10 +10,13 @@ const Header = () => {
 
 	return (
 		<HeaderContainer>
-			<Link to={"/"} className="logo">
+			<Link to={"/"}>
 				<h1>
-					<img src={logo} alt="Logo" className="logo__image" />
-					<span className="logo__title">Pontorino</span>
+					<img
+						src={"/img/pontorino-logo.png"}
+						alt="PontorinoLogo"
+						className="logo"
+					/>
 				</h1>
 			</Link>
 			<img
@@ -46,7 +48,7 @@ const Header = () => {
 				</ul>
 				<Button className="white-btn">Login</Button>
 				<Link to={"/clockin"}>
-				<Button className="white-btn">Clock in</Button>
+					<Button className="white-btn">Clock in</Button>
 				</Link>
 				<Button className="demo-btn">Demonstration</Button>
 			</Navigation>
