@@ -9,12 +9,14 @@ export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+
+	gap: 20px;
 
 	position: relative;
 
 	h2 {
 		color: #32cd32;
+		margin-top: 12px;
 	}
 
 	input {
@@ -25,14 +27,16 @@ export const Form = styled.form`
 	}
 
 	.handle-form {
-		width: 100%;
-
-		position: absolute;
-		bottom: 0;
+		width: 80%;
 
 		border-radius: 0;
 
 		background-color: #32cd32;
 		color: #fff;
+	}
+
+	@media screen and (max-width: 1024px) {
+		width: 80%;
+		height: 480px;
 	}
 `;
