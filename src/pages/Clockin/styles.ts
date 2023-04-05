@@ -9,11 +9,6 @@ export const ClockIn = styled.div`
 	flex-direction: column;
 	justify-content: center;
 
-	background: rgb(52, 52, 52);
-	background: linear-gradient(
-		-45deg,
-		rgba(120, 120, 120, 1) 0%,
-		rgba(60, 132, 11, 1) 80%,
-		rgba(69, 170, 0, 1) 100%
-	);
+	background-color: #32cd32;
+	background: linear-gradient(-125deg, #4d3180 20%, #32cd32 130%);
 `;

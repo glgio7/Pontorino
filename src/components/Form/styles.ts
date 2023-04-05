@@ -14,9 +14,56 @@ export const Form = styled.form`
 
 	position: relative;
 
+	box-shadow: 10px 10px 20px #333;
+
 	h2 {
+		font-size: 1rem;
+		line-height: 1.25rem;
+
+		cursor: pointer;
+
+		width: 80%;
+
+		margin-top: 20px;
+		padding: 12px;
+
+		border-radius: 12px;
+
+		background-color: #444;
 		color: #32cd32;
-		margin-top: 12px;
+
+		position: relative;
+
+		z-index: 5;
+
+		&:hover {
+			::after {
+				top: -48px;
+
+				opacity: 1;
+
+				background-color: #fff;
+			}
+		}
+	}
+
+	h2::after {
+		content: "Horário de Brasília";
+
+		background-color: #444;
+
+		padding: 3px 6px;
+
+		border-radius: 12px;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		opacity: 0;
+
+		transition: all 300ms;
 	}
 
 	input {
