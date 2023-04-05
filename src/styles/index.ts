@@ -242,15 +242,10 @@ export const SectionContainer = styled.section`
 	.schedule-container {
 		width: 40%;
 	}
-	/* 
-	.banner-container {
-		
-		height: 320px;
-		background-color: orange;
-	} */
 
 	@media screen and (max-width: 1024px) {
 		padding: 5rem 2rem;
+		padding-bottom: 0;
 
 		.section__title,
 		.section__subtitle {
@@ -299,6 +294,7 @@ export const CardsContainer = styled.div`
 	@media screen and (max-width: 1024px) {
 		flex-direction: column;
 		align-items: center;
+		padding-bottom: 0;
 	}
 `;
 
@@ -344,6 +340,8 @@ export const Wrapper = styled.div`
 		width: 25%;
 		height: 2rem;
 
+		font-size: 1rem;
+
 		font-weight: normal;
 
 		background: transparent;
@@ -381,7 +379,7 @@ export const Wrapper = styled.div`
 		scrollbar-width: none;
 
 		margin-top: 6px;
-		padding: 2rem 0rem;
+		padding-top: 2rem;
 	}
 
 	.container {
@@ -467,6 +465,10 @@ export const BannerContainer = styled.ul`
 			color: #32cd32;
 			text-shadow: 0px 0px 10px #000;
 		}
+
+		&::first-letter {
+			color: #fff;
+		}
 	}
 
 	li span {
@@ -477,6 +479,7 @@ export const BannerContainer = styled.ul`
 	@media screen and (max-width: 1024px) {
 		height: auto;
 		flex-direction: column;
+		margin-top: 5rem;
 
 		li {
 			width: 100%;

@@ -45,7 +45,9 @@ const Header = () => {
 					</Link>
 				</ul>
 				<Button className="white-btn">Login</Button>
+				<Link to={"/clockin"}>
 				<Button className="white-btn">Clock in</Button>
+				</Link>
 				<Button className="demo-btn">Demonstration</Button>
 			</Navigation>
 		</HeaderContainer>

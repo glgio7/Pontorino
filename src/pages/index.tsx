@@ -3,6 +3,7 @@ import ServiceCard from "../components/ServiceCard";
 import * as S from "../styles";
 import { useRef } from "react";
 import Button from "../components/Button";
+import Header from "../components/Header";
 
 const Home = () => {
 	const carousel = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ const Home = () => {
 
 	return (
 		<MasterContainer>
+			<Header />
 			<S.WelcomeContainer>
 				<article>
 					<h2>
