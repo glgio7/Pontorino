@@ -4,26 +4,20 @@ import Button from "../Button";
 import * as S from "./styles";
 
 type FormProps = {
-	dailyDate?: string;
-	image: string;
+	firstPlaceholder: string;
+	secondPlaceholder: string;
 	buttonText: string;
-	title: string;
 };
 
-const Form = ({ dailyDate, image, buttonText, title }: FormProps) => {
+const Form = ({
+	firstPlaceholder,
+	secondPlaceholder,
+	buttonText,
+}: FormProps) => {
 	return (
-		<S.Form>
-			{image === "" ? (
-				<h2>
-					{dailyDate} - {title}
-				</h2>
-			) : (
-				<Link to={"/"}>
-					<img className="logo" src={image} alt="" />
-				</Link>
-			)}
-			<input type={"text"} placeholder={"Employee's code"} />
-			<input type={"password"} placeholder={"PIN"} />
+		<S.Form onSubmit={(e) => e.preventDefault()}>
+			<input type={"text"} placeholder={firstPlaceholder} />
+			<input type={"password"} placeholder={secondPlaceholder} />
 			<Button className="handle-form">{buttonText}</Button>
 		</S.Form>
 	);

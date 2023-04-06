@@ -28,11 +28,13 @@ const ClockIn = () => {
 	setInterval(getCurrentDate, 1000);
 	return (
 		<S.ClockIn>
+			<h2>
+				{achievedDate} - {currentDate}
+			</h2>
 			<Form
-				image=""
-				title={currentDate}
+				firstPlaceholder="Employee's code"
+				secondPlaceholder="PIN"
 				buttonText={"REGISTER"}
-				dailyDate={achievedDate}
 			/>
 		</S.ClockIn>
 	);
