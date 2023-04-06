@@ -15,6 +15,14 @@ const Login = () => {
 		3: false,
 	});
 
+	const firstPlaceholder: string =
+		buttonSelected[1] === true ? "Email" : "Employer's code";
+
+	const secondPlaceholder: string =
+		buttonSelected[1] === true ? "Web Password" : "PIN";
+
+	const buttonText: string = buttonSelected[3] === true ? "REGISTER" : "LOGIN";
+
 	const selectButton = (num: number) => {
 		setButtonSelected((prevState) => {
 			const newState = { ...prevState };
@@ -69,10 +77,11 @@ const Login = () => {
 				</Button>
 			</div>
 			<Form
-				firstPlaceholder="Email"
-				secondPlaceholder="Web Password"
-				buttonText="LOGIN"
+				firstPlaceholder={firstPlaceholder}
+				secondPlaceholder={secondPlaceholder}
+				buttonText={buttonText}
 			/>
+			<span>Recover password</span>
 		</S.Login>
 	);
 };

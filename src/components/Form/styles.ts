@@ -10,7 +10,7 @@ export const Form = styled.form`
 	align-items: center;
 	justify-content: center;
 
-	padding: 4rem 2rem;
+	padding: 2rem 2rem;
 
 	gap: 20px;
 
@@ -38,6 +38,5 @@ export const Form = styled.form`
 
 	@media screen and (max-width: 1024px) {
 		width: 80%;
-		height: 320px;
 	}
 `;
