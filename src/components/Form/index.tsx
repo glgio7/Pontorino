@@ -18,7 +18,7 @@ const Form = ({
 		<S.Form onSubmit={(e) => e.preventDefault()}>
 			<input type={"text"} placeholder={firstPlaceholder} />
 			<input type={"password"} placeholder={secondPlaceholder} />
-			<Button className="handle-form">{buttonText}</Button>
+			<Button className="handle-form__btn">{buttonText}</Button>
 		</S.Form>
 	);
 };

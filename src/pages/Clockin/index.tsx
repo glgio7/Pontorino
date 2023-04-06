@@ -3,7 +3,7 @@ import Form from "../../components/Form";
 import { useState } from "react";
 
 const dailyDate = new Date();
-const day = dailyDate.getDay();
+const day = dailyDate.getDate();
 const month = dailyDate.getMonth() + 1;
 const year = dailyDate.getFullYear().toString().slice(2, 4);
 
@@ -28,14 +28,25 @@ const ClockIn = () => {
 	setInterval(getCurrentDate, 1000);
 	return (
 		<S.ClockIn>
-			<h2>
-				{achievedDate} - {currentDate}
-			</h2>
-			<Form
-				firstPlaceholder="Employee's code"
-				secondPlaceholder="PIN"
-				buttonText={"REGISTER"}
-			/>
+			<S.MainContainer>
+				<h2>
+					{achievedDate} - {currentDate}
+				</h2>
+				<Form
+					firstPlaceholder="Employee's code"
+					secondPlaceholder="PIN"
+					buttonText={"REGISTER"}
+				/>
+
+				<div className="span-container">
+					<span>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+						laboriosam harum deleniti architecto quibusdam quae tenetur qui
+						aliquid necessitatibus et corporis molestias quia dolorum quo
+						perspiciatis quas nam culpa praesentium.
+					</span>
+				</div>
+			</S.MainContainer>
 		</S.ClockIn>
 	);
 };

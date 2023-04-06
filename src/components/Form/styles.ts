@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-	width: 40%;
+	width: 100%;
 
 	background-color: #fff;
 
@@ -10,17 +10,15 @@ export const Form = styled.form`
 	align-items: center;
 	justify-content: center;
 
-	padding: 2rem 2rem;
+	padding: 2rem;
 
 	gap: 20px;
 
 	position: relative;
 
-	box-shadow: 10px 10px 20px #333;
-
 	input,
-	.handle-form {
-		width: 100%;
+	.handle-form__btn {
+		width: 240px;
 	}
 
 	input {
@@ -29,7 +27,7 @@ export const Form = styled.form`
 		background-color: #ddd;
 	}
 
-	.handle-form {
+	.handle-form__btn {
 		border-radius: 0;
 
 		background-color: #32cd32;
@@ -37,6 +35,9 @@ export const Form = styled.form`
 	}
 
 	@media screen and (max-width: 1024px) {
-		width: 80%;
+		input,
+		.handle-form__btn {
+			width: 100%;
+		}
 	}
 `;

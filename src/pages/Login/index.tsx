@@ -35,53 +35,69 @@ const Login = () => {
 
 	return (
 		<S.Login>
-			<div className="logo-container">
-				<Link to={"/"}>
-					<img
-						className="logo"
-						src="/img/pontorino-logo.png"
-						alt="Pontorino logo"
-					/>
-				</Link>
-			</div>
-			<div className="client-wrapper">
-				<Button
-					className={
-						buttonSelected[1]
-							? "client-wrapper__btn active"
-							: " client-wrapper__btn"
-					}
-					onClick={() => selectButton(1)}
-				>
-					Employer
-				</Button>
-				<Button
-					className={
-						buttonSelected[2]
-							? "client-wrapper__btn active"
-							: " client-wrapper__btn"
-					}
-					onClick={() => selectButton(2)}
-				>
-					Collaborator
-				</Button>
-				<Button
-					className={
-						buttonSelected[3]
-							? "client-wrapper__btn active"
-							: " client-wrapper__btn"
-					}
-					onClick={() => selectButton(3)}
-				>
-					Clock in
-				</Button>
-			</div>
-			<Form
-				firstPlaceholder={firstPlaceholder}
-				secondPlaceholder={secondPlaceholder}
-				buttonText={buttonText}
-			/>
-			<span>Recover password</span>
+			<S.AuxContainer>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis
+					maxime, <strong>maiores esse quos earum ea ex animi?</strong>
+				</p>
+			</S.AuxContainer>
+			<S.MainContainer>
+				<div className="logo-container">
+					<Link to={"/"}>
+						<img
+							className="logo"
+							src="/img/pontorino-logo.png"
+							alt="Pontorino logo"
+						/>
+					</Link>
+				</div>
+				<div className="client-wrapper">
+					<Button
+						className={
+							buttonSelected[1]
+								? "client-wrapper__btn active"
+								: " client-wrapper__btn"
+						}
+						onClick={() => selectButton(1)}
+					>
+						Employer
+					</Button>
+					<Button
+						className={
+							buttonSelected[2]
+								? "client-wrapper__btn active"
+								: " client-wrapper__btn"
+						}
+						onClick={() => selectButton(2)}
+					>
+						Collaborator
+					</Button>
+					<Button
+						className={
+							buttonSelected[3]
+								? "client-wrapper__btn active"
+								: " client-wrapper__btn"
+						}
+						onClick={() => selectButton(3)}
+					>
+						Clock in
+					</Button>
+				</div>
+				<Form
+					firstPlaceholder={firstPlaceholder}
+					secondPlaceholder={secondPlaceholder}
+					buttonText={buttonText}
+				/>
+				<div className="span-container">
+					<span>
+						<Link to={"/"}>Recover password</Link>
+					</span>
+					<span>
+						Not registered? <Link to={"/"}>Register here.</Link>
+					</span>
+				</div>
+			</S.MainContainer>
+			<S.AuxContainer background="/img/modules.png"></S.AuxContainer>
 		</S.Login>
 	);
 };

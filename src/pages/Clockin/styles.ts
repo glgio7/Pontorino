@@ -2,7 +2,19 @@ import styled from "styled-components";
 
 export const ClockIn = styled.div`
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #32cd32;
+	background: linear-gradient(-125deg, #4d3180 20%, #32cd32 100%);
+`;
+
+export const MainContainer = styled.div`
+	width: 40%;
+	height: 100%;
 
 	display: flex;
 	align-items: center;
@@ -18,9 +30,8 @@ export const ClockIn = styled.div`
 
 		cursor: pointer;
 
-		width: 40%;
+		width: 100%;
 
-		margin-top: 20px;
 		padding: 12px;
 
 		border-radius: 12px 12px 0 0;
@@ -61,7 +72,32 @@ export const ClockIn = styled.div`
 
 		transition: all 300ms;
 	}
+
+	.span-container {
+		padding: 0.5rem 0;
+		padding-bottom: 2rem;
+
+		width: 100%;
+
+		box-shadow: 0px 10px 20px #333;
+
+		border-radius: 0 0 12px 12px;
+	}
+
+	.span-container span {
+		display: block;
+
+		color: #fff;
+
+		margin-block: 12px;
+
+		font-size: 10px;
+	}
 	@media screen and (max-width: 1024px) {
 		width: 80%;
+
+		.span-container {
+			padding: 0.5rem;
+		}
 	}
 `;
