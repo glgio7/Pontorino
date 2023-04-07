@@ -10,7 +10,7 @@ const handleLogin = (email: string, password: string) => {
 		.catch((error) => {
 			const errorCode = error.code;
 			const errorMessage = error.message;
-			window.alert(`Erro: ${errorCode}. Message: ${errorMessage}`);
+			window.alert(`Error: ${errorCode}. Message: ${errorMessage}`);
 		});
 };
 
