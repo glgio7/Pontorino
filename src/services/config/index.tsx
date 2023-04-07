@@ -2,10 +2,12 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 const firebaseConfig = {
-	apiKey: import.meta.env.VITE_APP_API_KEY,
+	apiKey: process.env.VITE_APP_API_KEY,
 	authDomain: "pontorino-cd1a8.firebaseapp.com",
 	projectId: "pontorino-cd1a8",
 	storageBucket: "pontorino-cd1a8.appspot.com",
