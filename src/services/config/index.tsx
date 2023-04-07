@@ -2,8 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-import * as dotenv from "dotenv";
-
+import dotenv from "dotenv";
 dotenv.config();
 
 const firebaseConfig = {
