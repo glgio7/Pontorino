@@ -1,15 +1,7 @@
 import { useState } from "react";
-import { db } from "../../services/config";
-import {
-	doc,
-	setDoc,
-	updateDoc,
-	getDoc,
-	arrayUnion,
-} from "firebase/firestore";
-import { FormData } from "./types";
 import * as S from "./styles";
 import Form from "../../components/Form";
+import handleTimeClock from "../../services/actions/handleTimeClock";
 
 const currentDate = new Date()
 	.toLocaleDateString("pt-BR", {
@@ -33,29 +25,6 @@ const ClockIn = () => {
 
 	setInterval(getCurrentTime, 1000);
 
-	const handleClock = async (userCode: string, userPin: number) => {
-		const formData: FormData = {
-			code: userCode,
-			pin: userPin,
-			registers: { [currentDate]: currentTime },
-		};
-
-		try {
-			const docRef = doc(db, "employees", userCode);
-			const docSnap = await getDoc(docRef);
-
-			if (docSnap.exists()) {
-				await updateDoc(docRef, {
-					registers: arrayUnion(formData.registers),
-				});
-			} else {
-				await setDoc(docRef, formData);
-			}
-		} catch (err) {
-			console.error("Error adding/updating document: ", err);
-		}
-	};
-
 	return (
 		<S.ClockIn>
 			<S.MainContainer>
@@ -68,7 +37,9 @@ const ClockIn = () => {
 					buttonText={"REGISTER"}
 					setFirstInput={setUserCode}
 					setSecondInput={setUserPin}
-					handleFunction={() => handleClock(userCode, userPin)}
+					handleFunction={() =>
+						handleTimeClock(userCode, userPin, currentDate, currentTime)
+					}
 				/>
 
 				<div className="span-container">
