@@ -93,7 +93,7 @@ const Login = () => {
 						<Link to={"/"}>Recover password</Link>
 					</span>
 					<span>
-						Not registered? <Link to={"/"}>Register here.</Link>
+						Not registered? <Link to={"/signup"}>Register here.</Link>
 					</span>
 				</div>
 			</S.MainContainer>

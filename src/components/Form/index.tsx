@@ -4,6 +4,7 @@ import * as S from "./styles";
 type FormProps = {
 	firstPlaceholder: string;
 	secondPlaceholder: string;
+	thirdPlaceholder?: string;
 	buttonText: string;
 	setFirstInput?: (input: string) => void;
 	setSecondInput?: (input: number) => void;
@@ -13,6 +14,7 @@ type FormProps = {
 const Form = ({
 	firstPlaceholder,
 	secondPlaceholder,
+	thirdPlaceholder,
 	buttonText,
 	setFirstInput,
 	setSecondInput,
@@ -38,6 +40,19 @@ const Form = ({
 					}
 				}}
 			/>
+
+			{thirdPlaceholder && (
+				<input
+					type={"password"}
+					placeholder={thirdPlaceholder}
+					onChange={(e) => {
+						if (setSecondInput) {
+							setSecondInput(Number(e.target.value));
+						}
+					}}
+				/>
+			)}
+
 			<Button
 				className="handle-form__btn"
 				onClick={() => handleFunction && handleFunction()}

@@ -28,10 +28,12 @@ const handleTimeClock = async (
 			await updateDoc(docRef, {
 				registers: arrayUnion(formData.registers),
 			});
+			window.alert("Done.");
+		} else {
+			window.alert("Not authorized.");
 		}
 	} catch (err) {
 		console.error("Error updating document: ", err);
-		window.alert("Não autorizado.");
 	}
 };
 

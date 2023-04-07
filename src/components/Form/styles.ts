@@ -22,7 +22,6 @@ export const Form = styled.form`
 	}
 
 	input {
-		margin-block: 6px;
 		height: 40px;
 		background-color: #ddd;
 	}

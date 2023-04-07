@@ -6,7 +6,7 @@ const checkEmployees = async (userCode: string) => {
 		const docRef = doc(db, "employees", userCode);
 		const docSnap = await getDoc(docRef);
 
-		if (docSnap.exists() || docRef) {
+		if (docSnap.exists()) {
 			return true;
 		} else {
 			return false;
