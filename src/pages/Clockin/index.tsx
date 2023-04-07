@@ -13,7 +13,7 @@ const currentDate = new Date()
 
 const ClockIn = () => {
 	const [userCode, setUserCode] = useState<string>("");
-	const [userPin, setUserPin] = useState<number>(0);
+	const [userPin, setUserPin] = useState<string>("");
 	const [currentTime, setCurrentTime] = useState<string>("Loading...");
 
 	const getCurrentTime = (): void => {

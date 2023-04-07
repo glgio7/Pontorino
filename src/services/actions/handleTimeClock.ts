@@ -1,16 +1,16 @@
 import { db } from "../../services/config";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import checkEmployees from "../database/checkEmployees";
+import checkEmployees from "../database/employees";
 
 export interface FormData {
 	code: string;
-	pin: number;
+	pin: string;
 	registers: { [key: string]: string };
 }
 
 const handleTimeClock = async (
 	userCode: string,
-	userPin: number,
+	userPin: string,
 	currentDate: string,
 	currentTime: string
 ) => {

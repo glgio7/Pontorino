@@ -3,6 +3,7 @@ import Form from "../../components/Form";
 import Button from "../../components/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import handleLogin from "../../services/actions/handleLogin";
 
 interface ButtonSelected {
 	[key: string]: boolean;
@@ -14,6 +15,9 @@ const Login = () => {
 		2: false,
 		3: false,
 	});
+
+	const [email, setEmail] = useState<string>("");
+	const [password, setPassword] = useState<string>("");
 
 	const firstPlaceholder: string =
 		buttonSelected[1] === true ? "Email" : "Employer's code";
@@ -87,6 +91,13 @@ const Login = () => {
 					firstPlaceholder={firstPlaceholder}
 					secondPlaceholder={secondPlaceholder}
 					buttonText={buttonText}
+					setFirstInput={setEmail}
+					setSecondInput={setPassword}
+					handleFunction={() => {
+						if (buttonSelected[1]) {
+							handleLogin(email, password);
+						}
+					}}
 				/>
 				<div className="span-container">
 					<span>

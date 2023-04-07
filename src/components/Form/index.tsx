@@ -7,7 +7,7 @@ type FormProps = {
 	thirdPlaceholder?: string;
 	buttonText: string;
 	setFirstInput?: (input: string) => void;
-	setSecondInput?: (input: number) => void;
+	setSecondInput?: (input: string) => void;
 	handleFunction?: () => void;
 };
 
@@ -36,7 +36,7 @@ const Form = ({
 				placeholder={secondPlaceholder}
 				onChange={(e) => {
 					if (setSecondInput) {
-						setSecondInput(Number(e.target.value));
+						setSecondInput(e.target.value);
 					}
 				}}
 			/>
@@ -47,7 +47,7 @@ const Form = ({
 					placeholder={thirdPlaceholder}
 					onChange={(e) => {
 						if (setSecondInput) {
-							setSecondInput(Number(e.target.value));
+							setSecondInput(e.target.value);
 						}
 					}}
 				/>

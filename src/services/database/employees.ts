@@ -1,4 +1,4 @@
-import { db } from "../../services/config";
+import { db } from "../config";
 import { doc, getDoc } from "firebase/firestore";
 
 const checkEmployees = async (userCode: string) => {
