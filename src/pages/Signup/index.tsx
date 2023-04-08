@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Form from "../../components/Form";
 import Button from "../../components/Button";
 import { useState } from "react";
+import handleRegister from "../../services/actions/handleRegister";
 
 const Signup = () => {
 	const [email, setEmail] = useState<string>("");
@@ -66,7 +67,7 @@ const Signup = () => {
 								: "handle-form__btn disabled"
 						}
 						onClick={() => {
-							// handleLogin(email, password);
+							handleRegister(email, password);
 						}}
 					>
 						REGISTER

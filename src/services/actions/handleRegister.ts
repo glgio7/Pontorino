@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config";
 
-const handleLogin = (email: string, password: string) => {
+const handleRegister = (email: string, password: string) => {
 	createUserWithEmailAndPassword(auth, email, password)
 		.then((data) => {
 			const user = data.user;
@@ -14,4 +14,4 @@ const handleLogin = (email: string, password: string) => {
 		});
 };
 
-export default handleLogin;
+export default handleRegister;
