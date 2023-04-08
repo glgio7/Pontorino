@@ -17,8 +17,9 @@ export const Form = styled.form`
 	position: relative;
 
 	input,
+	p,
 	.handle-form__btn {
-		width: 240px;
+		width: 100%;
 	}
 	.handle-form__btn.disabled {
 		opacity: 0.5;
@@ -37,8 +38,6 @@ export const Form = styled.form`
 		font-size: 0.75rem;
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 			sans-serif;
-
-		width: 240px;
 	}
 
 	.handle-form__btn {
@@ -50,9 +49,5 @@ export const Form = styled.form`
 
 	@media screen and (max-width: 1024px) {
 		padding: 1rem;
-		input,
-		.handle-form__btn {
-			width: 100%;
-		}
 	}
 `;

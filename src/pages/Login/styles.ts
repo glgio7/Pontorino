@@ -48,7 +48,7 @@ export const MainContainer = styled.div`
 		box-shadow: 0px 10px 0px #fff;
 	}
 	.client-wrapper__btn {
-		width: 92px;
+		width: 184px;
 		color: #000;
 		background: #ddd;
 
