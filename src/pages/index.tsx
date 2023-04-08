@@ -4,6 +4,7 @@ import * as S from "../styles";
 import { useRef } from "react";
 import Button from "../components/Button";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 	const carousel = useRef<HTMLDivElement>(null);
@@ -48,7 +49,9 @@ const Home = () => {
 						officiis alias molestiae vel facilis quasi dignissimos nulla unde
 						voluptatum?
 					</p>
-					<Button className="primary-btn">Schedule demonstration</Button>
+					<Link to={"/demo"}>
+						<Button className="primary-btn">Schedule demonstration</Button>
+					</Link>
 					<Button className="secondary-btn">Try for free »</Button>
 				</article>
 				<img src="/img/welcome.jpg" className="welcome-image" />
@@ -213,7 +216,9 @@ const Home = () => {
 					</li>
 				</ul>
 				<div className="schedule-container">
-					<Button className="primary-btn">Schedule demonstration</Button>
+					<Link to={"/demo"}>
+						<Button className="primary-btn">Schedule demonstration</Button>
+					</Link>
 				</div>
 			</S.SectionContainer>
 			<S.SectionContainer>
@@ -250,7 +255,9 @@ const Home = () => {
 					</div>
 				</S.Wrapper>
 				<div className="schedule-container">
-					<Button className="primary-btn">Schedule demonstration</Button>
+					<Link to={"/demo"}>
+						<Button className="primary-btn">Schedule demonstration</Button>
+					</Link>
 				</div>
 			</S.SectionContainer>
 			<S.BannerContainer>

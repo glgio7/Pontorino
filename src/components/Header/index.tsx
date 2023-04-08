@@ -47,12 +47,14 @@ const Header = () => {
 					</Link>
 				</ul>
 				<Link to={"/login"}>
-				<Button className="white-btn">Login</Button>
+					<Button className="white-btn">Login</Button>
 				</Link>
 				<Link to={"/clockin"}>
 					<Button className="white-btn">Clock in</Button>
 				</Link>
-				<Button className="demo-btn">Demonstration</Button>
+				<Link to={"/demo"}>
+					<Button className="demo-btn">Demonstration</Button>
+				</Link>
 			</Navigation>
 		</HeaderContainer>
 	);
