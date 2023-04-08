@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as S from "./styles";
 import Form from "../../components/Form";
 import handleTimeClock from "../../services/actions/handleTimeClock";
+import Button from "../../components/Button";
 
 const currentDate = new Date()
 	.toLocaleDateString("pt-BR", {
@@ -31,16 +32,32 @@ const ClockIn = () => {
 				<h2>
 					{currentDate} - {currentTime}
 				</h2>
-				<Form
-					firstPlaceholder="Employee's code"
-					secondPlaceholder="PIN"
-					buttonText={"REGISTER"}
-					setFirstInput={setUserCode}
-					setSecondInput={setUserPin}
-					handleFunction={() =>
-						handleTimeClock(userCode, userPin, currentDate, currentTime)
-					}
-				/>
+				<Form>
+					<input
+						type={"text"}
+						placeholder={"Employee's code"}
+						required
+						onChange={(e) => {
+							setUserCode(e.target.value);
+						}}
+					/>
+					<input
+						type={"password"}
+						placeholder={"PIN"}
+						required
+						onChange={(e) => {
+							setUserPin(e.target.value);
+						}}
+					/>
+					<Button
+						className="handle-form__btn"
+						onClick={() =>
+							handleTimeClock(userCode, userPin, currentDate, currentTime)
+						}
+					>
+						REGISTER
+					</Button>
+				</Form>
 
 				<div className="span-container">
 					<span>
