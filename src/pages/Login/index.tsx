@@ -87,18 +87,34 @@ const Login = () => {
 						Clock in
 					</Button>
 				</div>
-				<Form
-					firstPlaceholder={firstPlaceholder}
-					secondPlaceholder={secondPlaceholder}
-					buttonText={buttonText}
-					setFirstInput={setEmail}
-					setSecondInput={setPassword}
-					handleFunction={() => {
-						if (buttonSelected[1]) {
-							handleLogin(email, password);
-						}
-					}}
-				/>
+				<Form>
+					<input
+						type={"text"}
+						placeholder={firstPlaceholder}
+						required
+						onChange={(e) => {
+							setEmail(e.target.value);
+						}}
+					/>
+					<input
+						type={"password"}
+						placeholder={secondPlaceholder}
+						required
+						onChange={(e) => {
+							setPassword(e.target.value);
+						}}
+					/>
+					<Button
+						className="handle-form__btn"
+						onClick={() => {
+							if (buttonSelected[1]) {
+								handleLogin(email, password);
+							}
+						}}
+					>
+						{buttonText}
+					</Button>
+				</Form>
 				<div className="span-container">
 					<span>
 						<Link to={"/"}>Recover password</Link>

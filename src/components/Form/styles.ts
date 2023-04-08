@@ -20,6 +20,10 @@ export const Form = styled.form`
 	.handle-form__btn {
 		width: 240px;
 	}
+	.handle-form__btn.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
 
 	input {
 		height: 40px;
