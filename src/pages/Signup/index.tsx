@@ -1,14 +1,29 @@
 import * as S from "./styles";
 import { Link } from "react-router-dom";
-import Form from "../../components/Form";
+import Form, { validatePassword } from "../../components/Form";
 import Button from "../../components/Button";
 import { useState } from "react";
 import handleRegister from "../../services/actions/handleRegister";
 
 const Signup = () => {
 	const [email, setEmail] = useState<string>("");
+
 	const [password, setPassword] = useState<string>("");
 	const [passwordConfirmation, setPasswordConfirmation] = useState<string>("");
+	const [passwordError, setPasswordError] = useState<string>("");
+
+	const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const password = event.target.value;
+		setPassword(password);
+
+		if (!validatePassword(password)) {
+			setPasswordError(
+				"Password must contain at least 6 characters, 1 uppercase letter, 1 lowercase letter, and 1 number."
+			);
+		} else {
+			setPasswordError("");
+		}
+	};
 
 	return (
 		<S.Signup>
@@ -47,9 +62,7 @@ const Signup = () => {
 						type={"password"}
 						placeholder={"Password"}
 						required
-						onChange={(e) => {
-							setPassword(e.target.value);
-						}}
+						onChange={handlePasswordChange}
 					/>
 					<input
 						value={passwordConfirmation}
@@ -60,6 +73,7 @@ const Signup = () => {
 							setPasswordConfirmation(e.target.value);
 						}}
 					/>
+					{passwordError && <p>{passwordError}</p>}
 					<Button
 						className={
 							password === passwordConfirmation

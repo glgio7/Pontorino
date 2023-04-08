@@ -4,8 +4,8 @@ import { auth } from "../config";
 const handleRegister = (email: string, password: string) => {
 	createUserWithEmailAndPassword(auth, email, password)
 		.then((data) => {
-			const user = data.user;
-			console.log(user);
+			window.confirm("Successful. You're in!");
+			window.location.href = "/login";
 		})
 		.catch((error) => {
 			const errorCode = error.code;

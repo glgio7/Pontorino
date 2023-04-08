@@ -52,7 +52,7 @@ export const MainContainer = styled.div`
 		color: #000;
 		background: #ddd;
 
-		font-size: 0.75rem;
+		font-size: 0.65rem;
 		padding: 0;
 		margin: 0 3px;
 
@@ -91,10 +91,13 @@ export const MainContainer = styled.div`
 	@media screen and (max-width: 1024px) {
 		width: 80%;
 
+		.client-wrapper {
+			padding: 0 1rem;
+		}
+
 		.client-wrapper__btn {
 			width: 84px;
 			height: 30px;
-			font-size: 0.6rem;
 		}
 	}
 `;

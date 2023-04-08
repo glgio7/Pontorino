@@ -12,7 +12,7 @@ export const Form = styled.form`
 
 	padding: 2rem;
 
-	gap: 20px;
+	gap: 10px;
 
 	position: relative;
 
@@ -28,6 +28,17 @@ export const Form = styled.form`
 	input {
 		height: 40px;
 		background-color: #ddd;
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+	}
+
+	p {
+		color: #ff0000;
+
+		font-size: 0.75rem;
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+			sans-serif;
+
+		width: 240px;
 	}
 
 	.handle-form__btn {
@@ -38,6 +49,7 @@ export const Form = styled.form`
 	}
 
 	@media screen and (max-width: 1024px) {
+		padding: 1rem;
 		input,
 		.handle-form__btn {
 			width: 100%;
