@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Demo = styled.div`
 	background-color: #f0f0f0;
 
+	position: relative;
+
 	display: flex;
 
 	width: 100%;
@@ -19,6 +21,12 @@ export const Demo = styled.div`
 		justify-content: space-between;
 	}
 
+	ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	.list-item__btn {
 		width: 240px;
 
@@ -33,6 +41,42 @@ export const Demo = styled.div`
 	span {
 		font-size: 0.8rem;
 		color: #fff;
+	}
+
+	.close-btn {
+		display: none;
+	}
+
+	@media screen and (max-width: 1024px) {
+		nav {
+			width: 100%;
+			height: 100vh;
+			position: fixed;
+			top: 0;
+			left: 0;
+			transform: translateY(-100%);
+			transition: all 500ms;
+		}
+
+		nav.active {
+			transform: translateY(0);
+		}
+
+		.material-symbols-outlined {
+			font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+			font-size: 2rem;
+
+			color: #fff;
+
+			cursor: pointer;
+
+			display: block;
+
+			margin-bottom: 1rem;
+
+			width: 32px;
+			height: 32px;
+		}
 	}
 `;
 
@@ -68,6 +112,12 @@ export const Header = styled.header`
 		background: #fff;
 
 		width: 240px;
+	}
+
+	@media screen and (max-width: 1024px) {
+		flex-direction: column;
+		height: auto;
+		padding: 1rem 2rem;
 	}
 `;
 

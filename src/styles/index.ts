@@ -10,14 +10,82 @@ const MasterContainer = styled.div`
 	width: 100%;
 	min-height: calc(100vh - 80px);
 
-	margin-top: 80px;
+	padding: 0 5rem;
+
+	@media screen and (max-width: 1024px) {
+		flex-direction: column;
+		align-items: center;
+		padding: 0 5%;
+	}
+`;
+
+export const Container = styled.section`
+	width: 100%;
+	height: 100%;
+
+	padding: 5rem 0;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	article {
+		width: 50%;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	h2,
+	p {
+		text-align: left;
+
+		width: 80%;
+	}
+
+	h2 {
+		font-size: 2.25rem;
+
+		color: #333;
+	}
+
+	p {
+		margin: 1rem 0;
+		&:first-of-type {
+			font-weight: 600;
+		}
+	}
+
+	.welcome-image {
+		width: 65%;
+
+		aspect-ratio: 1;
+
+		object-fit: cover;
+		object-position: left;
+
+		border-radius: 50%;
+
+		margin: auto;
+	}
+
+	.btn-container {
+		width: 100%;
+
+		display: flex;
+	}
+
+	.btn-container__link {
+		width: 40%;
+		height: 54px;
+
+		margin-top: 2rem;
+	}
 
 	.primary-btn,
 	.secondary-btn {
-		height: 54px;
-		width: 49.5%;
-
-		margin-top: 2rem;
+		width: 98%;
+		height: 100%;
 	}
 
 	.secondary-btn {
@@ -32,90 +100,129 @@ const MasterContainer = styled.div`
 		}
 	}
 
-	@media screen and (max-width: 1024px) {
-		flex-direction: column;
-		align-items: center;
-	}
-`;
+	/* ///////// SECOND PART /////////  */
 
-export const WelcomeContainer = styled.section`
-	width: 100%;
-	height: 100%;
+	.section__title {
+		font-size: 1.75rem;
 
-	padding: 5rem;
+		line-height: 2.75rem;
 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	article {
-		width: 40%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
+		width: 60%;
 
-	p,
-	h2 {
-		text-align: left;
-
-		width: 100%;
-	}
-
-	h2 {
-		font-size: 2.25rem;
+		margin: 0 auto;
+		text-align: center;
 
 		color: #333;
 	}
 
-	p {
-		margin: 1rem 0;
+	.section__subtitle {
+		width: 60%;
+
+		margin: 0 auto;
+		font-weight: 300;
+		margin-top: 1rem;
+
+		text-align: center;
 	}
 
-	p:first-of-type {
-		font-weight: 600;
-	}
-	.welcome-image {
-		width: 35%;
-		height: 35%;
+	.image-content {
+		margin-top: 1rem;
+		padding-right: 1rem;
 
-		aspect-ratio: 1;
-
+		aspect-ratio: 16/9;
 		object-fit: cover;
-		object-position: left;
 
-		border-radius: 50%;
+		width: 100%;
+
+		border-radius: 0 100% 0 50%;
+	}
+
+	.section-list {
+		height: 100%;
+
+		padding-left: 1rem;
+	}
+
+	.section-list__item {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.section-list__item h4 {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.material-symbols-outlined {
+		font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+		height: 1.5rem;
+		width: 1.5rem;
+		color: #32cd32;
+	}
+
+	.section-list__item p {
+		margin-left: 1.5rem;
+	}
+
+	.schedule-container {
+		width: 100%;
+		height: 54px;
+		margin-block: 1rem;
+	}
+
+	.schedule-container button {
+		height: 100%;
 	}
 
 	@media screen and (max-width: 1024px) {
 		width: 100%;
-
-		padding: 5rem 2rem;
+		padding: 2rem 0;
 
 		article {
 			width: 100%;
 		}
 
-		.primary-btn,
-		.secondary-btn {
+		.btn-container__link {
 			height: 72px;
-			margin-bottom: 4rem;
-		}
-
-		.primary-btn {
-			width: 64%;
-		}
-
-		.secondary-btn {
-			width: 35%;
+			width: 100%;
+			margin-bottom: 2rem;
 		}
 
 		.welcome-image {
+			width: 90%;
+		}
+
+		.section__title {
 			width: 100%;
+			text-align: left;
+			line-height: 2.5rem;
+		}
+
+		.section__subtitle {
+			text-align: left;
+			margin: 0;
+			margin-top: 1rem;
+		}
+
+		.image-content {
+			margin-top: 1rem;
+			padding-right: 1rem;
+
+			aspect-ratio: 16/9;
+			object-fit: cover;
+
+			width: 100%;
+
+			border-radius: 0 0 50% 50%;
+		}
+
+		.section-list {
+			margin-top: 1rem;
 		}
 	}
 `;
 
-export const SponsorsContainer = styled.div`
+export const Sponsors = styled.div`
 	width: 100%;
 
 	display: flex;
@@ -134,151 +241,10 @@ export const SponsorsContainer = styled.div`
 
 		object-fit: contain;
 	}
-`;
-
-export const SectionContainer = styled.section`
-	width: 100%;
-	height: 100%;
-
-	padding: 5rem;
-
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-
-	border-radius: 12px;
-
-	.section__title {
-		font-size: 1.75rem;
-
-		line-height: 3rem;
-
-		width: 60%;
-
-		color: #333;
-	}
-
-	.section__subtitle {
-		width: 60%;
-		margin-top: 1rem;
-	}
-
-	article {
-		width: 50%;
-		display: flex;
-		flex-direction: column;
-	}
-
-	article h2 {
-		font-size: 2rem;
-		line-height: 3rem;
-		text-align: left;
-
-		color: #333;
-
-		width: 80%;
-	}
-	article p {
-		width: 80%;
-		text-align: left;
-	}
-
-	.image-content {
-		margin-top: 1rem;
-
-		aspect-ratio: 16/9;
-		object-fit: cover;
-
-		width: 100%;
-
-		border-radius: 20px;
-	}
-
-	article,
-	.section__list {
-		margin-top: 2rem;
-	}
-
-	.section__list {
-		text-align: left;
-		padding-left: 5rem;
-		width: 50%;
-	}
-
-	.section__list li {
-		display: inline-flex;
-		flex-wrap: wrap;
-		margin-block: 1rem;
-		align-items: center;
-		width: 100%;
-	}
-
-	.section__list h4 {
-		margin: 0.25rem;
-		margin-top: -0.25rem;
-		width: 100%;
-		display: inline-flex;
-		align-items: center;
-	}
-
-	.section__list span {
-		margin-right: 0.25rem;
-	}
-	.section__list p {
-		margin: 0;
-		text-align: left;
-		margin-left: 2rem;
-		width: 90%;
-	}
-
-	.material-symbols-outlined {
-		font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-		height: 1.5rem;
-		width: 1.5rem;
-		color: #32cd32;
-		align-self: flex-start;
-	}
-
-	.schedule-container {
-		width: 40%;
-	}
 
 	@media screen and (max-width: 1024px) {
-		padding: 5rem 2rem;
-		padding-bottom: 0;
-
-		.section__title,
-		.section__subtitle {
-			width: 100%;
-		}
-
-		.section__subtitle {
-			width: 90%;
-		}
-
-		article {
-			width: 100%;
-		}
-
-		article h2 {
-			width: 100%;
-			text-align: center;
-		}
-
-		article p {
-			text-align: center;
-		}
-
-		.section__list {
-			padding-left: 0;
-			width: auto;
-		}
-
-		.section__list h4 {
-			margin-top: initial;
-		}
-		.schedule-container {
-			width: 100%;
+		h6 {
+			margin-top: 2rem;
 		}
 	}
 `;
@@ -437,9 +403,10 @@ export const BannerContainer = styled.ul`
 
 	background-image: url("/img/banner.jpg");
 	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
 
-	padding: 2rem 5rem;
+	padding: 0rem 5rem;
 
 	display: flex;
 	align-items: center;
@@ -473,13 +440,21 @@ export const BannerContainer = styled.ul`
 
 	li span {
 		font-size: 0.85rem;
+
 		margin-top: 0.15rem;
+
+		background-color: rgba(0, 0, 0, 0.5);
+		color: #fff;
+
+		border-radius: 12px;
+
+		padding: 9px 15px;
 	}
 
 	@media screen and (max-width: 1024px) {
 		height: auto;
 		flex-direction: column;
-		margin-top: 5rem;
+		padding: 0 2rem;
 
 		li {
 			width: 100%;

@@ -13,9 +13,9 @@ const ServiceCard = ({ text, title, image }: ServiceCardProps) => {
 			<img src={image} className="icon-card" />
 			<h2 className="card__title">{title}</h2>
 			{text.map((text) => (
-				<li key={Math.random()}>
+				<li key={Math.random()} className="list-item">
 					<span className="material-symbols-outlined">check_circle</span>
-					<p className="card__description">{text}</p>
+					<p className="item__description">{text}</p>
 				</li>
 			))}
 			<a href="">

@@ -25,13 +25,13 @@ const StyledServiceCard = styled.ul`
 		position: absolute;
 		top: -27px;
 
-		padding: 0.5rem;
+		padding: 0.75rem;
 
-		object-fit: cover;
+		object-fit: contain;
 
 		border-radius: 50%;
 
-		background-color: #32cd32;
+		background-color: #4d3180;
 	}
 
 	.card__title,
@@ -39,28 +39,24 @@ const StyledServiceCard = styled.ul`
 		width: 100%;
 	}
 
-	h2 {
+	.card__title {
+		font-size: 1.5rem;
+		text-align: center;
 		line-height: 3rem;
 	}
 
-	li {
+	.list-item {
 		display: inline-flex;
-		margin-block: 1rem;
 		align-items: center;
+		justify-content: space-around;
+		margin-block: 6px;
 		width: 100%;
 	}
 
 	.material-symbols-outlined {
 		font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 		height: 1.5rem;
-		width: 1.5rem;
 		color: #32cd32;
-		align-self: flex-start;
-	}
-
-	.card__description {
-		text-align: left;
-		margin-left: 0.25rem;
 	}
 
 	a {
@@ -82,7 +78,7 @@ const StyledServiceCard = styled.ul`
 	}
 
 	@media screen and (max-width: 1024px) {
-		width: 90%;
+		width: 100%;
 
 		align-items: flex-start;
 

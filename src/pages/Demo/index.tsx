@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import close from "../../assets/close-btn.svg";
 import * as S from "./styles";
 import Button from "../../components/Button";
+import { useState } from "react";
 
 const servicesList = [
 	"Buscar funcionário",
@@ -9,6 +11,8 @@ const servicesList = [
 ];
 
 const Demo = () => {
+	const [menuMobile, setMenuMobile] = useState<boolean>(false);
+
 	return (
 		<>
 			<S.Header>
@@ -21,11 +25,19 @@ const Demo = () => {
 						/>
 					</h1>
 				</Link>
-				<Button className="user__btn">admin@pontorino.com</Button>
+				<Button className="user__btn" onClick={() => setMenuMobile(true)}>
+					admin@pontorino.com
+				</Button>
 			</S.Header>
 			<S.Demo>
-				<nav>
+				<nav className={menuMobile ? "active" : ""}>
 					<ul>
+						<span
+							className="material-symbols-outlined close-btn"
+							onClick={() => setMenuMobile(false)}
+						>
+							cancel
+						</span>
 						{servicesList.map((item) => (
 							<li key={item}>
 								<Button className="list-item__btn">{item}</Button>

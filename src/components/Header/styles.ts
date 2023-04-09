@@ -12,9 +12,6 @@ const HeaderContainer = styled.header`
 
 	padding: 0 5rem;
 
-	position: fixed;
-	top: 0;
-
 	z-index: 99;
 
 	h1 {
@@ -80,10 +77,10 @@ export const Navigation = styled.nav<{ active: boolean }>`
 		border-radius: 0 12px 12px 0;
 
 		font-weight: normal;
+	}
 
-		&:first-of-type {
-			border-radius: 12px 0 0 12px;
-		}
+	.white-btn.first {
+		border-radius: 12px 0 0 12px;
 	}
 
 	.demo-btn {
@@ -98,13 +95,13 @@ export const Navigation = styled.nav<{ active: boolean }>`
 
 	@media screen and (max-width: 1024px) {
 		position: fixed;
-		top: calc(80px);
+		top: 0;
 		right: 0;
 
 		z-index: 99;
 
 		width: 256px;
-		height: calc(100vh - (80px));
+		height: 100vh;
 
 		padding: 0 1rem;
 
