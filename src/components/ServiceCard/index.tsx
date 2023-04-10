@@ -15,7 +15,7 @@ const ServiceCard = ({ text, title, image }: ServiceCardProps) => {
 			{text.map((text) => (
 				<li key={Math.random()} className="list-item">
 					<span className="material-symbols-outlined">check_circle</span>
-					<p className="item__description">{text}</p>
+					<p className="card__description">{text}</p>
 				</li>
 			))}
 			<a href="">

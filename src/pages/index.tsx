@@ -69,42 +69,42 @@ const Home = () => {
 					<S.Sponsors>
 						<h6>Lorem ipsum dolor sit amet csonsectetur.</h6>
 						<img
-							src="/img/pattern-logo-1.svg"
+							src="/img/sponsors/pattern-logo-1.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
 						<img
-							src="/img/pattern-logo-2.svg"
+							src="/img/sponsors/pattern-logo-2.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
 						<img
-							src="/img/pattern-logo-3.svg"
+							src="/img/sponsors/pattern-logo-3.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
 						<img
-							src="/img/pattern-logo-2.svg"
+							src="/img/sponsors/pattern-logo-2.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
 						<img
-							src="/img/pattern-logo-1.svg"
+							src="/img/sponsors/pattern-logo-1.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
 						<img
-							src="/img/pattern-logo-3.svg"
+							src="/img/sponsors/pattern-logo-3.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
 						<img
-							src="/img/pattern-logo-2.svg"
+							src="/img/sponsors/pattern-logo-2.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
 						<img
-							src="/img/pattern-logo-1.svg"
+							src="/img/sponsors/pattern-logo-1.svg"
 							alt="Sponsor"
 							className="sponsor-image"
 						/>
@@ -131,8 +131,8 @@ const Home = () => {
 								"Lorem ipsum dolor ssist amet.",
 								"Lorem ipsum dolor sa	it amet.",
 							]}
-							title={"Lorem ipsum"}
-							image={"/img/verified.svg"}
+							title={"Employer"}
+							image={"/img/service-card/verified.svg"}
 						/>
 						<ServiceCard
 							text={[
@@ -140,8 +140,8 @@ const Home = () => {
 								"Lorem ipsum dolor sit amet.",
 								"Lorem ipsum dolor sit amet.",
 							]}
-							title={"Ipsum"}
-							image={"/img/clock.svg"}
+							title={"Schedules"}
+							image={"/img/service-card/clock.svg"}
 						/>
 						<ServiceCard
 							text={[
@@ -149,39 +149,11 @@ const Home = () => {
 								"Lorem ipsum dolor sit awmet.",
 								"Lorem ipsum dolor sit amwet.",
 							]}
-							title={"Lorem"}
-							image={"/img/vacation.svg"}
+							title={"Vacation"}
+							image={"/img/service-card/vacation.svg"}
 						/>
 					</S.CardsContainer>
 				</S.Container>
-			</MasterContainer>
-
-			{/* Banner container */}
-
-			<S.BannerContainer>
-				<li>
-					<h4>+ 10 ipsum dolor sit amet.</h4>
-					<span>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident,
-						aliquam.
-					</span>
-				</li>
-				<li>
-					<h4>+ 25 ipsum pop flip sit amet.</h4>
-					<span>
-						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
-						king kong
-					</span>
-				</li>
-				<li>
-					<h4>+ 50 ipsum flip flop sit amet.</h4>
-					<span>
-						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
-						king kong
-					</span>
-				</li>
-			</S.BannerContainer>
-			<MasterContainer>
 				{/* Services container */}
 
 				<S.Container>
@@ -327,6 +299,32 @@ const Home = () => {
 					</div>
 				</S.Container>
 			</MasterContainer>
+
+			{/* Banner container */}
+
+			<S.BannerContainer>
+				<li>
+					<h4>+ 10 ipsum dolor sit amet.</h4>
+					<span>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident,
+						aliquam.
+					</span>
+				</li>
+				<li>
+					<h4>+ 25 ipsum pop flip sit amet.</h4>
+					<span>
+						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
+						king kong
+					</span>
+				</li>
+				<li>
+					<h4>+ 50 ipsum flip flop sit amet.</h4>
+					<span>
+						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
+						king kong
+					</span>
+				</li>
+			</S.BannerContainer>
 		</>
 	);
 };

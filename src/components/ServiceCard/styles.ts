@@ -10,6 +10,9 @@ const StyledServiceCard = styled.ul`
 	align-items: center;
 
 	background-color: #fff;
+	background-image: url("/img/service-card/service-card.jpg");
+	background-size: cover;
+	background-position: center;
 
 	border-radius: 10px;
 	box-shadow: 3px 6px 10px #444;
@@ -31,25 +34,44 @@ const StyledServiceCard = styled.ul`
 
 		border-radius: 50%;
 
-		background-color: #4d3180;
+		background-color: #5e3185;
 	}
 
 	.card__title,
 	.card__description {
 		width: 100%;
+
+		color: #fff;
 	}
 
 	.card__title {
 		font-size: 1.5rem;
 		text-align: center;
 		line-height: 3rem;
+
+		background-color: rgba(0, 0, 0, 0.8);
+
+		padding: 9px;
+
+		border-radius: 10px;
+	}
+
+	.card__description {
+		margin-left: 6px;
 	}
 
 	.list-item {
 		display: inline-flex;
 		align-items: center;
 		justify-content: space-around;
+
+		background-color: rgba(0, 0, 0, 0.5);
+
 		margin-block: 6px;
+		padding: 9px;
+
+		border-radius: 10px;
+
 		width: 100%;
 	}
 
@@ -65,7 +87,9 @@ const StyledServiceCard = styled.ul`
 
 	.btn {
 		color: #4d3180;
-		background: transparent;
+		background: #fff;
+
+		margin-block: 6px;
 
 		border: 1px solid rgba(0, 0, 0, 0.08);
 
@@ -73,7 +97,7 @@ const StyledServiceCard = styled.ul`
 
 		&:hover {
 			opacity: 1;
-			border: 1px solid rgba(77, 49, 128, 0.5);
+			border: 1px solid #4d3180;
 		}
 	}
 
