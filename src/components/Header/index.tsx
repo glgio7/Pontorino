@@ -34,26 +34,26 @@ const Header = () => {
 				/>
 				<ul>
 					<Link to={"/about"}>
-						<li>About</li>
+						<li>Sobre</li>
 					</Link>
 					<Link to={"/pricing"}>
-						<li>Pricing</li>
+						<li>Planos</li>
 					</Link>
 					<Link to={"/"}>
-						<li>Partnership</li>
+						<li>Parceria</li>
 					</Link>
 					<Link to={"/"}>
 						<li>Blog</li>
 					</Link>
 				</ul>
 				<Link to={"/login"}>
-					<Button className="white-btn first">Login</Button>
+					<Button className="white-btn first">Entrar</Button>
 				</Link>
 				<Link to={"/clockin"}>
-					<Button className="white-btn">Clock in</Button>
+					<Button className="white-btn">Bater ponto</Button>
 				</Link>
 				<Link to={"/demo"}>
-					<Button className="demo-btn">Demonstration</Button>
+					<Button className="demo-btn">Demonstração</Button>
 				</Link>
 			</Navigation>
 		</HeaderContainer>

@@ -41,33 +41,31 @@ const Home = () => {
 				<S.Container>
 					<article>
 						<h2>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Inventore, architecto?
+							Um software simples e intuitivo para DP, com registro de ponto e
+							muito mais.
 						</h2>
-						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Blanditiis, nemo.
+						<p className="p-bold">
+							Automatize seus processos de DP com o Pontorino.
 						</p>
 						<p>
-							Lorem ipsum dolor sit amset consectetur adipisicing elit. Ipsa eum
-							officiis alias molestiae vel facilis quasi dignissimos nulla unde
-							voluptatum?
+							Faça admissão, controle de ponto, férias e muito mais em um único
+							software para sua empresa
 						</p>
 						<div className="btn-container">
 							<Link to={"/demo"} className="btn-container__link">
-								<Button className="primary-btn">Schedule demonstration</Button>
+								<Button className="primary-btn">Agendar demonstração</Button>
 							</Link>
 							<Link to={"/demo"} className="btn-container__link">
-								<Button className="secondary-btn">Try for free »</Button>
+								<Button className="secondary-btn">Teste grátis »</Button>
 							</Link>
 						</div>
 					</article>
 					<article>
-						<img src="/img/demo-banner.jpg" className="welcome-image" />
+						<img src="/img/welcome-image.jpg" className="welcome-image" />
 					</article>
 
 					<S.Sponsors>
-						<h6>Lorem ipsum dolor sit amet csonsectetur.</h6>
+						<h6>Empresas de sucesso que escolheram o Pontorino.</h6>
 						<img
 							src="/img/sponsors/pattern-logo-1.svg"
 							alt="Sponsor"
@@ -115,41 +113,38 @@ const Home = () => {
 
 				<S.Container>
 					<h2 className="section__title">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-						voluptatem tempore optio aliquam eius quas animi sapiente ratione
-						numquam necessitatibus?
+						O software de DP que une tudo que você precisa em um só lugar!
 					</h2>
 					<p className="section__subtitle">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-						Exercitationem, dolores.
+						Toda a jornada do Departamento Pessoal conectada em poucos cliques
 					</p>
 
 					<S.CardsContainer>
 						<ServiceCard
 							text={[
-								"Lorem ipsum dolor sist amet.",
-								"Lorem ipsum dolor ssist amet.",
-								"Lorem ipsum dolor sa	it amet.",
+								"Realize processos admissionais com agilidade.",
+								"Facilite a interação com novos colaboradores.",
+								"Faça a gestão de associados com facilidade.",
 							]}
-							title={"Employer"}
+							title={"Admissão"}
 							image={"/img/service-card/verified.svg"}
 						/>
 						<ServiceCard
 							text={[
-								"Lorem ipsum dolor sit wamet.",
-								"Lorem ipsum dolor sit amet.",
-								"Lorem ipsum dolor sit amet.",
+								"Reduza o tempo no fechamento da folha.",
+								"Acompanhe os registros em tempo real.",
+								"Gerencie demandas internas e externas.",
 							]}
-							title={"Schedules"}
+							title={"Controle de ponto"}
 							image={"/img/service-card/clock.svg"}
 						/>
 						<ServiceCard
 							text={[
-								"Lorem ipsum dolor sit amet.",
-								"Lorem ipsum dolor sit awmet.",
-								"Lorem ipsum dolor sit amwet.",
+								"Automatize processos manuais no software.",
+								"Tenha transparência e segurança nos processos.",
+								"Gerencie as férias da sua equipe em poucos cliques.",
 							]}
-							title={"Vacation"}
+							title={"Férias"}
 							image={"/img/service-card/vacation.svg"}
 						/>
 					</S.CardsContainer>
@@ -159,8 +154,8 @@ const Home = () => {
 				<S.Container>
 					<article>
 						<h2>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit vel vitae
-							dolore.
+							5 motivos para começar a usar o nosso software e economizar tempo
+							e dinheiro!
 						</h2>
 						<img
 							className="image-content"
@@ -175,11 +170,11 @@ const Home = () => {
 									<span className="material-symbols-outlined">
 										check_circle
 									</span>
-									<span>Lorem ipsum dolor</span>
+									<span>Solução completa</span>
 								</h4>
 								<p>
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-									minus error beatae sit laudantium totam.
+									Tenha a jornada do seu departamento pessoal em um só lugar, da
+									admissão à demissão.
 								</p>
 							</li>
 							<li className="section-list__item">
@@ -187,11 +182,12 @@ const Home = () => {
 									<span className="material-symbols-outlined">
 										check_circle
 									</span>
-									<span>Lorem ipsum dolor</span>
+									<span>Processos simplificados</span>
 								</h4>
 								<p>
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-									minus error beatae sit laudantium totam.
+									Feche a folha de ponto com poucos cliques, aprove solicitações
+									de férias e acompanhe os indicadores de jornada direto na
+									plataforma.
 								</p>
 							</li>
 							<li className="section-list__item">
@@ -199,11 +195,11 @@ const Home = () => {
 									<span className="material-symbols-outlined">
 										check_circle
 									</span>
-									<span>Lorem ipsum dolor</span>
+									<span>Sistema integrado</span>
 								</h4>
 								<p>
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-									minus error beatae sit laudantium totam.
+									Integre o Pontorino aos principais softwares de folha de
+									pagamento do mercado com uma API aberta.
 								</p>
 							</li>
 							<li className="section-list__item">
@@ -211,11 +207,11 @@ const Home = () => {
 									<span className="material-symbols-outlined">
 										check_circle
 									</span>
-									<span>Lorem ipsum dolor</span>
+									<span>Relatórios dinâmicos</span>
 								</h4>
 								<p>
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-									minus error beatae sit laudantium totam.
+									Gere mais de 20 relatórios de gestão em tempo real para
+									auxiliar nas decisões estratégicas.
 								</p>
 							</li>
 							<li className="section-list__item">
@@ -223,30 +219,19 @@ const Home = () => {
 									<span className="material-symbols-outlined">
 										check_circle
 									</span>
-									<span>Lorem ipsum dolor</span>
+									<span>Solução digital e econômica</span>
 								</h4>
 								<p>
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-									minus error beatae sit laudantium totam.
-								</p>
-							</li>
-							<li className="section-list__item">
-								<h4>
-									<span className="material-symbols-outlined">
-										check_circle
-									</span>
-									<span>Lorem ipsum dolor</span>
-								</h4>
-								<p>
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-									minus error beatae sit laudantium totam.
+									Garanta mais segurança de dados e respaldo jurídico ao
+									modernizar seu DP, economizando até 50% em gastos ao poupar
+									papéis e recursos físicos.
 								</p>
 							</li>
 						</ul>
 					</article>
 					<div className="schedule-container">
 						<Link to={"/demo"}>
-							<Button>Schedule demonstration</Button>
+							<Button>Agendar demonstração</Button>
 						</Link>
 					</div>
 				</S.Container>
@@ -255,20 +240,17 @@ const Home = () => {
 
 				<S.Container>
 					<h2 className="section__title">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-						voluptatem tempore optio sapiente.
+						O que dizem as pessoas que descomplicaram o DP com o nosso software?
 					</h2>
 					<S.Wrapper>
 						<div className="wrapper__btn">
-							<button onClick={() => handleCarouselScroll(1)}>
-								Lorem optio
-							</button>
-							<button onClick={() => handleCarouselScroll(2)}>Enim Aude</button>
+							<button onClick={() => handleCarouselScroll(1)}>Decisões</button>
+							<button onClick={() => handleCarouselScroll(2)}>Gestão</button>
 							<button onClick={() => handleCarouselScroll(3)}>
-								Modi e Enim
+								Personalização
 							</button>
 							<button onClick={() => handleCarouselScroll(4)}>
-								Asperiores
+								Integração
 							</button>
 						</div>
 						<div className="carousel" ref={carousel}>
@@ -294,7 +276,7 @@ const Home = () => {
 					</S.Wrapper>
 					<div className="schedule-container">
 						<Link to={"/demo"}>
-							<Button>Schedule demonstration</Button>
+							<Button>Agendar demonstração</Button>
 						</Link>
 					</div>
 				</S.Container>
@@ -304,25 +286,16 @@ const Home = () => {
 
 			<S.BannerContainer>
 				<li>
-					<h4>+ 10 ipsum dolor sit amet.</h4>
-					<span>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident,
-						aliquam.
-					</span>
+					<h4>+ de 10 mil</h4>
+					<span>clientes de todo o brasil e no mundo.</span>
 				</li>
 				<li>
-					<h4>+ 25 ipsum pop flip sit amet.</h4>
-					<span>
-						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
-						king kong
-					</span>
+					<h4>+ de 2 milhões</h4>
+					<span>de pontos registrados diariamente.</span>
 				</li>
 				<li>
-					<h4>+ 50 ipsum flip flop sit amet.</h4>
-					<span>
-						Loli pop dig dog flip flop tik tok xing dong ling pong ping hong
-						king kong
-					</span>
+					<h4>+ de 500 mil</h4>
+					<span>vidas envolvidas.</span>
 				</li>
 			</S.BannerContainer>
 		</>

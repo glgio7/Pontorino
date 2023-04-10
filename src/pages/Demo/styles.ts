@@ -124,6 +124,6 @@ export const Header = styled.header`
 export const Container = styled.section`
 	width: 100%;
 	background-image: url("/img/demo-banner.jpg");
-	background-size: contain;
+	background-size: cover;
 	background-position: center;
 `;

@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 const StyledServiceCard = styled.ul`
-	width: 25%;
+	width: 30%;
 
 	text-align: center;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 
 	background-color: #fff;
 	background-image: url("/img/service-card/service-card.jpg");
@@ -34,21 +35,19 @@ const StyledServiceCard = styled.ul`
 
 		border-radius: 50%;
 
-		background-color: #5e3185;
+		background-color: #3d3185;
 	}
 
 	.card__title,
 	.card__description {
 		width: 100%;
-
-		color: #fff;
 	}
 
 	.card__title {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		text-align: center;
-		line-height: 3rem;
 
+		color: #fff;
 		background-color: rgba(0, 0, 0, 0.8);
 
 		padding: 9px;
@@ -58,6 +57,7 @@ const StyledServiceCard = styled.ul`
 
 	.card__description {
 		margin-left: 6px;
+		color: #000;
 	}
 
 	.list-item {
@@ -65,10 +65,12 @@ const StyledServiceCard = styled.ul`
 		align-items: center;
 		justify-content: space-around;
 
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(255, 255, 255, 0.75);
 
 		margin-block: 6px;
 		padding: 9px;
+
+		min-height: 108px;
 
 		border-radius: 10px;
 
@@ -78,7 +80,7 @@ const StyledServiceCard = styled.ul`
 	.material-symbols-outlined {
 		font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 		height: 1.5rem;
-		color: #32cd32;
+		color: #32cd32 !important;
 	}
 
 	a {
@@ -112,6 +114,10 @@ const StyledServiceCard = styled.ul`
 
 		.icon-card {
 			align-self: center;
+		}
+
+		.list-item {
+			min-height: auto;
 		}
 
 		li {

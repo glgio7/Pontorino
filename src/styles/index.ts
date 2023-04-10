@@ -51,9 +51,10 @@ export const Container = styled.section`
 
 	p {
 		margin: 1rem 0;
-		&:first-of-type {
-			font-weight: 600;
-		}
+	}
+
+	.p-bold {
+		font-weight: 600;
 	}
 
 	.welcome-image {
@@ -139,6 +140,9 @@ export const Container = styled.section`
 
 	.section-list {
 		height: 100%;
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
 
 		padding-left: 1rem;
 	}
@@ -151,17 +155,21 @@ export const Container = styled.section`
 	.section-list__item h4 {
 		display: inline-flex;
 		align-items: center;
+		font-size: 1.2rem;
+	}
+	.section-list__item span {
+		margin-left: 2rem;
 	}
 
 	.material-symbols-outlined {
 		font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 		height: 1.5rem;
 		width: 1.5rem;
-		color: #32cd32;
+		color: #4d3180;
 	}
 
 	.section-list__item p {
-		margin-left: 1.5rem;
+		margin-left: 5.5rem;
 	}
 
 	.schedule-container {
@@ -231,6 +239,9 @@ export const Sponsors = styled.div`
 
 	h6 {
 		width: 100%;
+
+		margin-top: 1rem;
+
 		color: #333;
 	}
 

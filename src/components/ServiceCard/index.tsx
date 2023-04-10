@@ -19,7 +19,7 @@ const ServiceCard = ({ text, title, image }: ServiceCardProps) => {
 				</li>
 			))}
 			<a href="">
-				<Button className="btn">Learn more »</Button>
+				<Button className="btn">Saiba mais »</Button>
 			</a>
 		</StyledServiceCard>
 	);
