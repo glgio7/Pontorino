@@ -298,6 +298,85 @@ const Home = () => {
 					<span>vidas envolvidas.</span>
 				</li>
 			</S.BannerContainer>
+			<MasterContainer>
+				<S.Container>
+					<h2 className="last-container__title">
+						Economize até 50% nas suas despesas com DP
+					</h2>
+					<article className="last-container__article">
+						<img className="" src="/img/image-example.jpg" alt="Lorem" />
+					</article>
+					<article className="last-container__list">
+						<ul className="section-list">
+							<li className="section-list__item">
+								<h4>
+									<img
+										src="/img/icons/badge.svg"
+										className="icon-list"
+										alt="badge"
+									/>
+									<span>Tudo em um só lugar</span>
+								</h4>
+								<p>
+									Concentre toda a jornada do DP em um só lugar, controle de
+									ponto, gestão de férias, processos de admissão, gestão
+									eletrônica de documentos e mais. Evite o uso de várias
+									plataformas simultâneas.
+								</p>
+							</li>
+							<li className="section-list__item">
+								<h4>
+									<img
+										src="/img/icons/schedule.svg"
+										className="icon-list"
+										alt="badge"
+									/>
+									<span>Elimine gastos com manutenção</span>
+								</h4>
+								<p>
+									Sem despesas com compra ou conserto de aparelhos. Implemente o
+									Tangerino e promova uma economia significativa na sua empresa.
+								</p>
+							</li>
+							<li className="section-list__item">
+								<h4>
+									<img
+										src="/img/icons/book.svg"
+										className="icon-list"
+										alt="badge"
+									/>
+									<span>Gaste menos tempo com o fechamento de ponto</span>
+								</h4>
+								<p>
+									Nosso software otimiza esse processo e oferece integração com
+									sistemas de folha de pagamento do mercado, deixando o seu DP
+									livre para outras tarefas.
+								</p>
+							</li>
+							<li className="section-list__item">
+								<h4>
+									<img
+										src="/img/icons/bell.svg"
+										className="icon-list"
+										alt="badge"
+									/>
+									<span>Reduza o uso de papel</span>
+								</h4>
+								<p>
+									Os comprovantes de ponto vão direto para o e-mail do
+									colaborador. Menos uso de papel, menos gasto e mais
+									consciência ecológica na sua empresa.
+								</p>
+							</li>
+						</ul>
+					</article>
+					<div className="schedule-container">
+						<Link to={"/demo"}>
+							<Button>Agendar demonstração</Button>
+						</Link>
+					</div>
+				</S.Container>
+			</MasterContainer>
 		</>
 	);
 };
