@@ -15,7 +15,7 @@ const MasterContainer = styled.div`
 	@media screen and (max-width: 1024px) {
 		flex-direction: column;
 		align-items: center;
-		padding: 0 5%;
+		padding: 0 2rem;
 	}
 `;
 
@@ -209,6 +209,7 @@ export const Container = styled.section`
 		.section__subtitle {
 			text-align: left;
 			margin: 0;
+			width: 100%;
 			margin-top: 1rem;
 		}
 
@@ -226,6 +227,14 @@ export const Container = styled.section`
 
 		.section-list {
 			margin-top: 1rem;
+		}
+
+		.section-list__item span {
+			margin-left: 3px;
+		}
+
+		.section-list__item p {
+			margin-left: calc(1.75rem + 3px);
 		}
 	}
 `;
@@ -388,7 +397,7 @@ export const Wrapper = styled.div`
 			}
 		}
 		.wrapper__btn button {
-			font-size: 0.8rem;
+			font-size: 0.65rem;
 
 			&::after {
 				bottom: -18px;
@@ -396,13 +405,14 @@ export const Wrapper = styled.div`
 		}
 		.container__item {
 			display: flex;
-			justify-content: space-around;
-			width: calc(100vw - 5rem);
+			flex-direction: column;
+			width: calc(100vw - 4rem);
+			gap: 6px;
 		}
 
 		.container__item img {
-			width: 45%;
-			aspect-ratio: 9/16;
+			width: 100%;
+			aspect-ratio: 16/9;
 			object-fit: cover;
 		}
 	}

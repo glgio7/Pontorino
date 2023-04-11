@@ -30,7 +30,7 @@ const HeaderContainer = styled.header`
 
 	@media screen and (max-width: 1024px) {
 		height: auto;
-		padding: 1rem 5%;
+		padding: 1rem 2rem;
 
 		.menu {
 			cursor: pointer;
