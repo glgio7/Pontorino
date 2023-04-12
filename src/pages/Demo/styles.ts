@@ -113,7 +113,6 @@ export const Header = styled.header`
 	}
 
 	.user__btn {
-		color: #32cd32;
 		background: #000;
 
 		width: 240px;
@@ -129,6 +128,32 @@ export const Header = styled.header`
 export const Container = styled.section`
 	width: 100%;
 	background-image: url("/img/demo-banner.jpg");
-	background-size: cover;
+	padding: 2rem;
 	background-position: center;
+
+	ul {
+		padding: 1rem;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.75);
+		border-radius: 10px;
+	}
+
+	li {
+		border-radius: 10px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-block: 1rem;
+		background-color: rgba(255, 255, 255, 0.8);
+		padding: 1rem;
+		width: 100%;
+	}
+
+	li button {
+		border-radius: 10px;
+		padding: 6px 9px;
+		background-color: #4d3180;
+		color: #fff;
+	}
 `;

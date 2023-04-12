@@ -8,11 +8,12 @@ import { DocumentData } from "firebase/firestore";
 const Demo = () => {
 	const [menuMobile, setMenuMobile] = useState<boolean>(false);
 
-	const [list, setList] = useState<DocumentData[]>([]);
+	const [list, setList] = useState<DocumentData[]>();
 
 	const getEmployees = async () => {
 		const employees = await listEmployees();
 		setList(employees);
+		setMenuMobile(false);
 	};
 
 	const servicesList = [
@@ -29,6 +30,8 @@ const Demo = () => {
 			action: () => {},
 		},
 	];
+
+	const e = ["bqwlea", "asdbfli", "hrejk", "kdjash", "laiwj"];
 
 	console.log(list);
 
@@ -74,7 +77,19 @@ const Demo = () => {
 						<span>Todos os direitos reservados.</span>
 					</h3>
 				</nav>
-				<S.Container></S.Container>
+				<S.Container>
+					{list && (
+						<ul>
+							<h2>Funcionários</h2>
+							{list.map((item) => (
+								<li key={item.code}>
+									{item.name}
+									<button>Ver detalhes</button>
+								</li>
+							))}
+						</ul>
+					)}
+				</S.Container>
 			</S.Demo>
 		</>
 	);
