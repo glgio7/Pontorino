@@ -199,6 +199,7 @@ export const Container = styled.section`
 	.last-container__list ul {
 		flex-direction: row;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 	.last-container__list li {
 		width: 50%;
@@ -436,12 +437,12 @@ export const Wrapper = styled.div`
 	}
 
 	.container__item {
+		gap: 6px;
 		display: flex;
-		justify-content: space-around;
 		width: calc(100vw - 10rem);
 	}
 	.container__item img {
-		width: 40%;
+		width: 50%;
 		aspect-ratio: 16/9;
 		object-fit: cover;
 		border-radius: 10px;

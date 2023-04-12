@@ -5,6 +5,7 @@ import ClockIn from "./pages/Clockin";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Demo from "./pages/Demo";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route path={"/signup"} element={<Signup />} />
 				<Route path={"/demo"} element={<Demo />} />
 			</Routes>
+			<Footer />
 		</BrowserRouter>
 	);
 }

@@ -1,6 +1,10 @@
-import MasterContainer from "../../styles";
+import Header from "../../components/Header";
 
 const Pricing = () => {
-	return <MasterContainer></MasterContainer>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 };
 export default Pricing;
