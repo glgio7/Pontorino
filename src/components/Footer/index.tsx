@@ -26,10 +26,10 @@ const Footer = () => {
 				</p>
 				<p>Telefone: (xx) xxxx-xxxx contato@pontorino.com.br </p>
 				<div className="social-links">
-					<img src="/img/icons/badge.svg" alt="" />
-					<img src="/img/icons/book.svg" alt="" />
-					<img src="/img/icons/bell.svg" alt="" />
-					<img src="/img/icons/schedule.svg" alt="" />
+					<img src="/img/icons/telegram.svg" alt="" />
+					<img src="/img/icons/whatsapp.svg" alt="" />
+					<img src="/img/icons/facebook.svg" alt="" />
+					<img src="/img/icons/linkedin.svg" alt="" />
 				</div>
 			</div>
 			<ul>

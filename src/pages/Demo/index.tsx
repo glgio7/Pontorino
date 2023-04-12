@@ -19,7 +19,7 @@ const Demo = () => {
 				<Link to={"/"}>
 					<h1>
 						<img
-							src={"/img/pontorino-logo.png"}
+							src={"/img/logo-alt.svg"}
 							alt="PontorinoLogo"
 							className="logo"
 						/>

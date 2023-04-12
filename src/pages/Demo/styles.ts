@@ -109,7 +109,7 @@ export const Header = styled.header`
 
 	.user__btn {
 		color: #32cd32;
-		background: #fff;
+		background: #000;
 
 		width: 240px;
 	}
