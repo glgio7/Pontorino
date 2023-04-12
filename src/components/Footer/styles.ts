@@ -19,6 +19,9 @@ export const Footer = styled.footer`
 		width: 100%;
 		height: 92px;
 		margin-bottom: 5rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	h4 span {
@@ -111,7 +114,6 @@ export const Footer = styled.footer`
 		display: flex;
 		width: 80%;
 		gap: 6px;
-		/* justify-content: space-between; */
 	}
 
 	.social-links img {
@@ -135,5 +137,49 @@ export const Footer = styled.footer`
 
 	@media screen and (max-width: 1024px) {
 		padding: 2rem;
+		flex-direction: column;
+
+		h4 {
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			width: 100%;
+		}
+		span {
+			text-align: left;
+		}
+
+		.info-container {
+			margin-top: 2rem;
+			width: 100%;
+		}
+
+		ul {
+			flex-direction: column;
+		}
+
+		li:first-child,
+		li:nth-child(2) {
+			margin-top: 2rem;
+		}
+
+		li {
+			width: 100%;
+		}
+
+		.last-span {
+			text-align: left;
+		}
+
+		p {
+			width: 100%;
+		}
+
+		h4 {
+			margin-bottom: 5rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 `;
