@@ -1,7 +1,7 @@
 import { db } from "../config";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, collection, getDoc, getDocs } from "firebase/firestore";
 
-const checkEmployees = async (userCode: string) => {
+export const verifyEmployees = async (userCode: string) => {
 	try {
 		const docRef = doc(db, "employees", userCode);
 		const docSnap = await getDoc(docRef);
@@ -16,4 +16,10 @@ const checkEmployees = async (userCode: string) => {
 	}
 };
 
-export default checkEmployees;
+export const listEmployees = async () => {
+	const querySnapshot = await getDocs(collection(db, "employees"));
+	const employeesArr = querySnapshot.docs.map((doc) => {
+		return doc.data();
+	});
+	return employeesArr;
+};

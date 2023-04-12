@@ -1,17 +1,36 @@
-import { Link } from "react-router-dom";
-import close from "../../assets/close-btn.svg";
 import * as S from "./styles";
 import Button from "../../components/Button";
+import { Link } from "react-router-dom";
 import { useState } from "react";
-
-const servicesList = [
-	"Buscar funcionário",
-	"Listar funcionários",
-	"Adicionar funcionário",
-];
+import { listEmployees } from "../../services/database/employees";
+import { DocumentData } from "firebase/firestore";
 
 const Demo = () => {
 	const [menuMobile, setMenuMobile] = useState<boolean>(false);
+
+	const [list, setList] = useState<DocumentData[]>([]);
+
+	const getEmployees = async () => {
+		const employees = await listEmployees();
+		setList(employees);
+	};
+
+	const servicesList = [
+		{
+			name: "Buscar funcionário",
+			action: () => {},
+		},
+		{
+			name: "Listar funcionários",
+			action: getEmployees,
+		},
+		{
+			name: "Adicionar funcionário",
+			action: () => {},
+		},
+	];
+
+	console.log(list);
 
 	return (
 		<>
@@ -39,8 +58,10 @@ const Demo = () => {
 							cancel
 						</span>
 						{servicesList.map((item) => (
-							<li key={item}>
-								<Button className="list-item__btn">{item}</Button>
+							<li key={item.name}>
+								<Button className="list-item__btn" onClick={item.action}>
+									{item.name}
+								</Button>
 							</li>
 						))}
 					</ul>

@@ -12,7 +12,7 @@ export const Demo = styled.div`
 
 	nav {
 		width: 20vw;
-		padding: 2rem;
+		padding: 2rem 1rem;
 
 		background-color: #222;
 
@@ -27,8 +27,13 @@ export const Demo = styled.div`
 		align-items: center;
 	}
 
+	ul,
+	li {
+		width: 100%;
+	}
+
 	.list-item__btn {
-		width: 240px;
+		width: 100%;
 
 		margin: 6px 0;
 	}

@@ -1,6 +1,6 @@
 import { db } from "../../services/config";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import checkEmployees from "../database/employees";
+import { verifyEmployees } from "../database/employees";
 
 export interface FormData {
 	code: string;
@@ -19,7 +19,7 @@ const handleTimeClock = async (
 		pin: userPin,
 		registers: { [currentDate]: currentTime },
 	};
-	const success = await checkEmployees(userCode);
+	const success = await verifyEmployees(userCode);
 
 	try {
 		const docRef = doc(db, "employees", userCode);
