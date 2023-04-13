@@ -3,21 +3,18 @@ import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { verifyEmployees } from "../database/employees";
 
 export interface FormData {
-	name: string;
 	code: string;
 	pin: string;
 	registers: { [key: string]: string };
 }
 
 const handleTimeClock = async (
-	name: string,
 	userCode: string,
 	userPin: string,
 	currentDate: string,
 	currentTime: string
 ) => {
 	const formData: FormData = {
-		name: name,
 		code: userCode,
 		pin: userPin,
 		registers: { [currentDate]: currentTime },
