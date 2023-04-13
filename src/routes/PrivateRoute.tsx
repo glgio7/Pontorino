@@ -1,10 +1,10 @@
-import { ReactNode, useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import Login from "../pages/Login";
 
-interface PrivateProps {
+type PrivateProps = {
 	children: React.ReactNode;
-}
+};
 
 const Private = ({ children }: PrivateProps) => {
 	const { authenticated } = useContext(AuthContext);

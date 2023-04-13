@@ -2,7 +2,7 @@ import * as S from "./styles";
 import Form from "../../components/Form";
 import Button from "../../components/Button";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import handleLogin from "../../services/actions/handleLogin";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -17,8 +17,10 @@ const Login = () => {
 		3: false,
 	});
 
-	const [email, setEmail] = useState<string>("");
+	const navigate = useNavigate();
 	const { setAuthenticated, setUser } = useContext(AuthContext);
+
+	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 
 	const firstPlaceholder: string =
@@ -110,7 +112,7 @@ const Login = () => {
 						className="handle-form__btn"
 						onClick={() => {
 							if (buttonSelected[1]) {
-								handleLogin(email, password);
+								handleLogin({ email, password, setAuthenticated, navigate });
 							}
 						}}
 					>
