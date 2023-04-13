@@ -28,6 +28,7 @@ export const Footer = styled.footer`
 		color: #ccc;
 		font-size: 1.75rem;
 		line-height: 2.5rem;
+		margin-right: 1rem;
 	}
 
 	h4 strong {
@@ -95,6 +96,10 @@ export const Footer = styled.footer`
 		margin-block: 12px;
 	}
 
+	.email {
+		word-wrap: break-word;
+	}
+
 	a:hover {
 		transition: all 300ms;
 		opacity: 0.8;
@@ -121,7 +126,7 @@ export const Footer = styled.footer`
 	}
 
 	.logo-footer {
-		width: 180px;
+		width: 160px;
 	}
 
 	.app-store {

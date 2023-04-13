@@ -5,7 +5,7 @@ const handleLogin = (email: string, password: string) => {
 	signInWithEmailAndPassword(auth, email, password)
 		.then((data) => {
 			const user = data.user;
-			console.log(user);
+			// setUser(user.email!);
 		})
 		.catch((error) => {
 			const errorCode = error.code;

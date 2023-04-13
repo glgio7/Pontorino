@@ -3,16 +3,16 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { listEmployees } from "../../services/database/employees";
-import { DocumentData } from "firebase/firestore";
+import { FormData } from "../../services/actions/handleTimeClock";
 
 const Demo = () => {
 	const [menuMobile, setMenuMobile] = useState<boolean>(false);
 
-	const [list, setList] = useState<DocumentData[]>();
+	const [list, setList] = useState<FormData[]>();
 
 	const getEmployees = async () => {
 		const employees = await listEmployees();
-		setList(employees);
+		setList(employees as FormData[]);
 		setMenuMobile(false);
 	};
 
@@ -30,10 +30,6 @@ const Demo = () => {
 			action: () => {},
 		},
 	];
-
-	const e = ["bqwlea", "asdbfli", "hrejk", "kdjash", "laiwj"];
-
-	console.log(list);
 
 	return (
 		<>

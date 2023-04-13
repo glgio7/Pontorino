@@ -24,7 +24,8 @@ const Footer = () => {
 					solução completa para a gestão da jornada de trabalho, automatizando
 					os processos manuais do DP de ponta a ponta.
 				</p>
-				<p>Telefone: (xx) xxxx-xxxx contato@pontorino.com.br </p>
+				<p>Telefone: (xx) xxxx-xxxx</p>
+				<p className="email"> contato@pontorino.com.br </p>
 				<div className="social-links">
 					<img src="/img/icons/telegram.svg" alt="" />
 					<img src="/img/icons/whatsapp.svg" alt="" />

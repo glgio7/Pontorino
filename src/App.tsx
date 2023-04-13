@@ -1,24 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages";
-import Pricing from "./pages/Pricing";
-import ClockIn from "./pages/Clockin";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Demo from "./pages/Demo";
+import { BrowserRouter } from "react-router-dom";
+
 import Footer from "./components/Footer";
+import { useEffect } from "react";
+import AppRoutes from "./routes/AppRoutes";
+import AuthProvider from "./contexts/AuthContext";
 
 function App() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route path={"/"} element={<Home />} />
-				<Route path={"/clockin"} element={<ClockIn />} />
-				<Route path={"/login"} element={<Login />} />
-				<Route path={"/pricing"} element={<Pricing />} />
-				<Route path={"/signup"} element={<Signup />} />
-				<Route path={"/demo"} element={<Demo />} />
-			</Routes>
-			<Footer />
+			<AuthProvider>
+				<AppRoutes />
+				<Footer />
+			</AuthProvider>
 		</BrowserRouter>
 	);
 }

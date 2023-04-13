@@ -1,9 +1,10 @@
 import * as S from "./styles";
 import Form from "../../components/Form";
 import Button from "../../components/Button";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import handleLogin from "../../services/actions/handleLogin";
+import { AuthContext } from "../../contexts/AuthContext";
 
 interface ButtonSelected {
 	[key: string]: boolean;
@@ -17,6 +18,7 @@ const Login = () => {
 	});
 
 	const [email, setEmail] = useState<string>("");
+	const { setAuthenticated, setUser } = useContext(AuthContext);
 	const [password, setPassword] = useState<string>("");
 
 	const firstPlaceholder: string =
