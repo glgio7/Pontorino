@@ -1,12 +1,16 @@
 import HeaderContainer, { Navigation } from "./styles";
 import menu from "../../assets/menu.svg";
 import close from "../../assets/close-btn.svg";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import Button from "../Button";
+import { AuthContext } from "../../contexts/AuthContext";
+import handleLogout from "../../services/actions/handleLogout";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
+	const { authenticated, setAuthenticated } = useContext(AuthContext);
+	const navigate = useNavigate();
 
 	return (
 		<HeaderContainer>
@@ -47,7 +51,14 @@ const Header = () => {
 					</Link>
 				</ul>
 				<Link to={"/login"}>
-					<Button className="white-btn first">Entrar</Button>
+					<Button
+						className="white-btn first"
+						onClick={() => {
+							authenticated && handleLogout({ setAuthenticated, navigate });
+						}}
+					>
+						{authenticated ? "Sair" : "Entrar"}
+					</Button>
 				</Link>
 				<Link to={"/clockin"}>
 					<Button className="white-btn">Bater ponto</Button>
