@@ -81,7 +81,7 @@ const Signup = () => {
 								: "handle-form__btn disabled"
 						}
 						onClick={() => {
-							handleRegister(email, password);
+							handleRegister({email, password});
 						}}
 					>
 						REGISTER

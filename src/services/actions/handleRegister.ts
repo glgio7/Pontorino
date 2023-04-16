@@ -1,7 +1,8 @@
+import { handleRegisterProps } from "./types";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config";
 
-const handleRegister = (email: string, password: string) => {
+const handleRegister = ({ email, password }: handleRegisterProps) => {
 	createUserWithEmailAndPassword(auth, email, password)
 		.then((data) => {
 			window.confirm("Successful. You're in!");

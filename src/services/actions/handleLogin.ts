@@ -1,17 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config";
-import { NavigateFunction } from "react-router-dom";
-
-type handleLoginProps = {
-	email: string;
-	password: string;
-	setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
-	navigate: NavigateFunction;
-};
-
-// for who wants to test:
-// login admin@pontorino.com
-// password: 123456
+import { handleLoginProps } from "./types";
 
 const handleLogin = ({
 	email,

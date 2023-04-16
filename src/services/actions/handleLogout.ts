@@ -1,10 +1,5 @@
 import { auth } from "../config";
-import { NavigateFunction } from "react-router-dom";
-
-type handleLogoutProps = {
-	setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
-	navigate: NavigateFunction;
-};
+import { handleLogoutProps } from "./types";
 
 const handleLogout = ({ setAuthenticated, navigate }: handleLogoutProps) => {
 	auth
