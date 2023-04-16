@@ -35,6 +35,10 @@ export const Demo = styled.div`
 	.list-item__btn {
 		width: 100%;
 
+		border-radius: 0;
+
+		background-color: #32cd32;
+
 		margin: 6px 0;
 	}
 
@@ -202,5 +206,13 @@ export const Container = styled.section`
 		line-height: 1.5rem;
 
 		display: block;
+	}
+
+	.handle-form__btn {
+		border-radius: 0;
+		width: 80%;
+
+		background-color: #4d3180;
+		color: #fff;
 	}
 `;

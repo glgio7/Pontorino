@@ -1,6 +1,8 @@
 import { NavigateFunction } from "react-router-dom";
 
 export interface FormData {
+	name?: string;
+	employer?: string;
 	code: string;
 	pin: string;
 	registers: { [key: string]: string };

@@ -2,13 +2,18 @@ import * as S from "./styles";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { listEmployees } from "../../services/database/employees";
+import { addEmployee, listEmployees } from "../../services/database/employees";
 import { DocumentData } from "firebase/firestore";
 
 const Demo = () => {
 	const [menuMobile, setMenuMobile] = useState<boolean>(false);
 
 	const [list, setList] = useState<DocumentData[]>();
+
+	const [employer, setEmployer] = useState<string>("");
+	const [name, setName] = useState<string>("");
+	const [code, setCode] = useState<string>("");
+	const [pin, setPin] = useState<string>("");
 
 	const getEmployees = async () => {
 		const employees = await listEmployees();
@@ -29,6 +34,7 @@ const Demo = () => {
 			name: "Adicionar funcionário",
 			action: () => {
 				setList(undefined);
+				setMenuMobile(false);
 			},
 		},
 	];
@@ -89,16 +95,52 @@ const Demo = () => {
 					)}
 
 					{!list && (
-						<form>
+						<form onSubmit={(e) => e.preventDefault()}>
 							<h2>Cadastrar funcionário</h2>
-							<label htmlFor="name">Empregador</label>
-							<input id="name" name="name" type="text" />
+							<label htmlFor="employer">Empregador</label>
+							<input
+								id="employer"
+								name="employer"
+								type="text"
+								value={employer}
+								onChange={(e) => setEmployer(e.target.value)}
+							/>
+
 							<label htmlFor="name">Nome Funcionário</label>
-							<input id="name" name="name" type="text" />
-							<label htmlFor="name">Code</label>
-							<input id="name" name="name" type="text" />
-							<label htmlFor="name">PIN</label>
-							<input id="name" name="name" type="text" />
+							<input
+								id="name"
+								name="name"
+								type="text"
+								value={name}
+								onChange={(e) => setName(e.target.value)}
+							/>
+
+							<label htmlFor="code">Code</label>
+							<input
+								id="code"
+								name="code"
+								type="text"
+								value={code}
+								onChange={(e) => setCode(e.target.value)}
+							/>
+
+							<label htmlFor="pin">PIN</label>
+							<input
+								id="pin"
+								name="pin"
+								type="text"
+								value={pin}
+								onChange={(e) => setPin(e.target.value)}
+							/>
+
+							<Button
+								className="handle-form__btn"
+								onClick={() => {
+									addEmployee(name, employer, code, pin);
+								}}
+							>
+								Cadastrar
+							</Button>
 						</form>
 					)}
 				</S.Container>
