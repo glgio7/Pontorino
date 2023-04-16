@@ -133,27 +133,74 @@ export const Container = styled.section`
 
 	ul {
 		padding: 1rem;
+
 		width: 100%;
 		height: 100%;
+
 		background-color: rgba(255, 255, 255, 0.75);
 		border-radius: 10px;
 	}
 
 	li {
-		border-radius: 10px;
 		display: inline-flex;
 		align-items: center;
 		justify-content: space-between;
+
 		margin-block: 1rem;
-		background-color: rgba(255, 255, 255, 0.8);
 		padding: 1rem;
+
+		border-radius: 10px;
+
+		background-color: rgba(255, 255, 255, 0.8);
+
 		width: 100%;
 	}
 
 	li button {
 		border-radius: 10px;
+
 		padding: 6px 9px;
+
 		background-color: #4d3180;
 		color: #fff;
+	}
+
+	form {
+		padding: 1rem;
+
+		width: 100%;
+		height: 100%;
+
+		background-color: rgba(255, 255, 255, 0.75);
+
+		border-radius: 10px;
+	}
+
+	input {
+		display: block;
+
+		margin: 0 auto;
+		margin-bottom: 1rem;
+
+		background-color: #fff;
+
+		border: #ddd 1px solid;
+
+		width: 80%;
+		height: 40px;
+		padding: 0 9px;
+
+		text-align: left;
+	}
+
+	label {
+		margin-left: 10%;
+		margin-block: 0.5rem;
+
+		text-align: left;
+		font-weight: bold;
+		line-height: 1.5rem;
+
+		display: block;
 	}
 `;

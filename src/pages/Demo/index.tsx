@@ -27,7 +27,9 @@ const Demo = () => {
 		},
 		{
 			name: "Adicionar funcionário",
-			action: () => {},
+			action: () => {
+				setList(undefined);
+			},
 		},
 	];
 
@@ -84,6 +86,20 @@ const Demo = () => {
 								</li>
 							))}
 						</ul>
+					)}
+
+					{!list && (
+						<form>
+							<h2>Cadastrar funcionário</h2>
+							<label htmlFor="name">Empregador</label>
+							<input id="name" name="name" type="text" />
+							<label htmlFor="name">Nome Funcionário</label>
+							<input id="name" name="name" type="text" />
+							<label htmlFor="name">Code</label>
+							<input id="name" name="name" type="text" />
+							<label htmlFor="name">PIN</label>
+							<input id="name" name="name" type="text" />
+						</form>
 					)}
 				</S.Container>
 			</S.Demo>

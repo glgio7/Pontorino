@@ -7,18 +7,13 @@ interface IAuthContext {
 	setUser: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const AuthContext = createContext<IAuthContext>({
-	authenticated: false,
-	setAuthenticated: () => {},
-	user: "",
-	setUser: () => {},
-});
-
-interface IAuthProvider {
+type AuthProviderProps = {
 	children: React.ReactNode;
-}
+};
 
-const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
+export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
+
+const AuthProvider = ({ children }: AuthProviderProps) => {
 	const [authenticated, setAuthenticated] = useState(false);
 	const [user, setUser] = useState("");
 

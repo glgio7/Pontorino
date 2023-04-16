@@ -5,6 +5,7 @@ import { useRef } from "react";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Home = () => {
 	const carousel = useRef<HTMLDivElement>(null);
@@ -377,6 +378,7 @@ const Home = () => {
 					</div>
 				</S.Container>
 			</MasterContainer>
+			<Footer />
 		</>
 	);
 };

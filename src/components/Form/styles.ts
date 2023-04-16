@@ -29,15 +29,14 @@ export const Form = styled.form`
 	input {
 		height: 40px;
 		background-color: #ddd;
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+		font-family: "Montserrat", sans-serif;
 	}
 
 	p {
 		color: #ff0000;
 
 		font-size: 0.75rem;
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-			sans-serif;
+		font-family: "Montserrat", sans-serif, sans-serif;
 	}
 
 	.handle-form__btn {
