@@ -117,7 +117,7 @@ export const Header = styled.header`
 	}
 
 	.user__btn {
-		background: #000;
+		background-color: #4d3180;
 
 		width: 240px;
 	}
@@ -133,6 +133,7 @@ export const Container = styled.section`
 	width: 100%;
 	background-image: url("/img/demo-banner.jpg");
 	padding: 2rem;
+	overflow-y: auto;
 	background-position: center;
 
 	ul {
@@ -178,34 +179,51 @@ export const Container = styled.section`
 		background-color: rgba(255, 255, 255, 0.75);
 
 		border-radius: 10px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.input-container {
+		width: 80%;
+
+		text-align: left;
+
+		position: relative;
+		margin-top: 1rem;
+	}
+
+	label {
+		display: inline-block;
+		margin-bottom: 0.25rem;
+		font-weight: bold;
 	}
 
 	input {
-		display: block;
-
-		margin: 0 auto;
-		margin-bottom: 1rem;
-
 		background-color: #fff;
 
 		border: #ddd 1px solid;
 
-		width: 80%;
+		width: 100%;
 		height: 40px;
+
 		padding: 0 9px;
+		margin-bottom: 1rem;
 
 		text-align: left;
 	}
 
-	label {
-		margin-left: 10%;
-		margin-block: 0.5rem;
+	.renew-btn {
+		font-size: 1.5rem;
 
-		text-align: left;
-		font-weight: bold;
-		line-height: 1.5rem;
+		position: absolute;
+		right: 6px;
+		bottom: 24px;
 
-		display: block;
+		color: #4d3180;
+
+		cursor: pointer;
 	}
 
 	.handle-form__btn {
@@ -214,5 +232,11 @@ export const Container = styled.section`
 
 		background-color: #4d3180;
 		color: #fff;
+	}
+
+	@media screen and (max-width: 1024px) {
+		.renew-btn {
+			bottom: 0;
+		}
 	}
 `;

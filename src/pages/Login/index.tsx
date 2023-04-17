@@ -18,7 +18,7 @@ const Login = () => {
 	});
 
 	const navigate = useNavigate();
-	const { setAuthenticated, setUser } = useContext(AuthContext);
+	const { setAuthenticated, setEmployerName } = useContext(AuthContext);
 
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
@@ -112,7 +112,7 @@ const Login = () => {
 						className="handle-form__btn"
 						onClick={() => {
 							if (buttonSelected[1]) {
-								handleLogin({ email, password, setAuthenticated, navigate });
+								handleLogin({ email, password, setEmployerName, setAuthenticated, navigate });
 							}
 						}}
 					>

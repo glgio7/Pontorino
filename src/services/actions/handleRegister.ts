@@ -1,10 +1,12 @@
 import { handleRegisterProps } from "./types";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../config";
 
-const handleRegister = ({ email, password }: handleRegisterProps) => {
+const handleRegister = ({ name, email, password }: handleRegisterProps) => {
 	createUserWithEmailAndPassword(auth, email, password)
-		.then((data) => {
+		.then((userCredential) => {
+			const user = userCredential.user;
+			updateProfile(user, { displayName: name });
 			window.confirm("Successful. You're in!");
 			window.location.href = "/login";
 		})

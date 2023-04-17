@@ -6,6 +6,8 @@ import { useState } from "react";
 import handleRegister from "../../services/actions/handleRegister";
 
 const Signup = () => {
+	const [name, setName] = useState<string>("");
+
 	const [email, setEmail] = useState<string>("");
 
 	const [password, setPassword] = useState<string>("");
@@ -49,6 +51,15 @@ const Signup = () => {
 
 				<Form>
 					<input
+						value={name}
+						type={"text"}
+						placeholder={"Nome e sobrenome"}
+						required
+						onChange={(e) => {
+							setName(e.target.value);
+						}}
+					/>
+					<input
 						value={email}
 						type={"text"}
 						placeholder={"Email"}
@@ -81,7 +92,7 @@ const Signup = () => {
 								: "handle-form__btn disabled"
 						}
 						onClick={() => {
-							handleRegister({email, password});
+							handleRegister({ name, email, password });
 						}}
 					>
 						REGISTER

@@ -9,6 +9,7 @@ export interface FormData {
 }
 
 export type handleRegisterProps = {
+	name: string;
 	email: string;
 	password: string;
 };
@@ -16,6 +17,7 @@ export type handleRegisterProps = {
 export type handleLoginProps = {
 	email: string;
 	password: string;
+	setEmployerName: React.Dispatch<React.SetStateAction<string>>;
 	setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 	navigate: NavigateFunction;
 };

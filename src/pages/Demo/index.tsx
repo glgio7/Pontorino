@@ -1,18 +1,21 @@
 import * as S from "./styles";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { addEmployee, listEmployees } from "../../services/database/employees";
 import { DocumentData } from "firebase/firestore";
+import { AuthContext } from "../../contexts/AuthContext";
+import { v4 as uuidv4 } from "uuid";
 
 const Demo = () => {
 	const [menuMobile, setMenuMobile] = useState<boolean>(false);
 
 	const [list, setList] = useState<DocumentData[]>();
 
-	const [employer, setEmployer] = useState<string>("");
+	const { employerName } = useContext(AuthContext);
+
 	const [name, setName] = useState<string>("");
-	const [code, setCode] = useState<string>("");
+	const [code, setCode] = useState<string>(uuidv4().slice(0, 8).toUpperCase());
 	const [pin, setPin] = useState<string>("");
 
 	const getEmployees = async () => {
@@ -52,7 +55,7 @@ const Demo = () => {
 					</h1>
 				</Link>
 				<Button className="user__btn" onClick={() => setMenuMobile(true)}>
-					admin@pontorino.com
+					{employerName}
 				</Button>
 			</S.Header>
 			<S.Demo>
@@ -97,46 +100,67 @@ const Demo = () => {
 					{!list && (
 						<form onSubmit={(e) => e.preventDefault()}>
 							<h2>Cadastrar funcionário</h2>
-							<label htmlFor="employer">Empregador</label>
-							<input
-								id="employer"
-								name="employer"
-								type="text"
-								value={employer}
-								onChange={(e) => setEmployer(e.target.value)}
-							/>
+							<div className="input-container">
+								<label htmlFor="employer">Empregador</label>
+								<input
+									id="employer"
+									name="employer"
+									type="text"
+									value={employerName}
+									readOnly
+								/>
+							</div>
 
-							<label htmlFor="name">Nome Funcionário</label>
-							<input
-								id="name"
-								name="name"
-								type="text"
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-							/>
+							<div className="input-container">
+								<label htmlFor="name">Nome Funcionário</label>
+								<input
+									id="name"
+									name="name"
+									type="text"
+									value={name}
+									placeholder="Nome e sobrenome"
+									onChange={(e) => setName(e.target.value)}
+								/>
+							</div>
 
-							<label htmlFor="code">Code</label>
-							<input
-								id="code"
-								name="code"
-								type="text"
-								value={code}
-								onChange={(e) => setCode(e.target.value)}
-							/>
+							<div className="input-container">
+								<label htmlFor="code">
+									Code
+									<span
+										className="material-symbols-outlined renew-btn"
+										onClick={() => setCode(uuidv4().slice(0, 8).toUpperCase())}
+									>
+										autorenew
+									</span>
+								</label>
+								<input
+									id="code"
+									name="code"
+									type="text"
+									value={code}
+									readOnly
+								/>
+							</div>
 
-							<label htmlFor="pin">PIN</label>
-							<input
-								id="pin"
-								name="pin"
-								type="text"
-								value={pin}
-								onChange={(e) => setPin(e.target.value)}
-							/>
+							<div className="input-container">
+								<label htmlFor="pin">PIN</label>
+								<input
+									id="pin"
+									name="pin"
+									type="text"
+									value={pin}
+									placeholder="Sugestão: 6 caracteres / apenas números"
+									onChange={(e) => setPin(e.target.value)}
+								/>
+							</div>
 
 							<Button
 								className="handle-form__btn"
-								onClick={() => {
-									addEmployee(name, employer, code, pin);
+								onClick={async () => {
+									await addEmployee(name, employerName, code, pin);
+									setCode(uuidv4().slice(0, 8).toUpperCase());
+									setName("");
+									setPin("");
 								}}
 							>
 								Cadastrar
