@@ -17,7 +17,7 @@ export const verifyEmployees = async (userCode: string) => {
 	}
 };
 
-export const listEmployees = async () => {
+export const getEmployees = async () => {
 	const querySnapshot = await getDocs(collection(db, "employees"));
 	const employeesArr = querySnapshot.docs.map((doc) => {
 		return doc.data();

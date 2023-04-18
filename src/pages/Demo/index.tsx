@@ -2,15 +2,18 @@ import * as S from "./styles";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { addEmployee, listEmployees } from "../../services/database/employees";
+import { addEmployee, getEmployees } from "../../services/database/employees";
 import { DocumentData } from "firebase/firestore";
 import { AuthContext } from "../../contexts/AuthContext";
 import { v4 as uuidv4 } from "uuid";
+import { FormData } from "../../services/actions/types";
 
 const Demo = () => {
 	const [menuMobile, setMenuMobile] = useState<boolean>(false);
 
-	const [list, setList] = useState<DocumentData[]>();
+	const [employeesList, setEmployeesList] = useState<DocumentData[]>();
+
+	const [currentEmployee, setCurrentEmployee] = useState<DocumentData>();
 
 	const { employerName } = useContext(AuthContext);
 
@@ -18,9 +21,9 @@ const Demo = () => {
 	const [code, setCode] = useState<string>(uuidv4().slice(0, 8).toUpperCase());
 	const [pin, setPin] = useState<string>("");
 
-	const getEmployees = async () => {
-		const employees = await listEmployees();
-		setList(employees);
+	const getEmployeesList = async () => {
+		const employees = await getEmployees();
+		setEmployeesList(employees);
 		setMenuMobile(false);
 	};
 
@@ -31,12 +34,12 @@ const Demo = () => {
 		},
 		{
 			name: "Listar funcionários",
-			action: getEmployees,
+			action: getEmployeesList,
 		},
 		{
 			name: "Adicionar funcionário",
 			action: () => {
-				setList(undefined);
+				setEmployeesList(undefined);
 				setMenuMobile(false);
 			},
 		},
@@ -85,19 +88,21 @@ const Demo = () => {
 					</h3>
 				</nav>
 				<S.Container>
-					{list && (
+					{employeesList && (
 						<ul>
 							<h2>Funcionários</h2>
-							{list.map((item) => (
+							{employeesList.map((item) => (
 								<li key={item.code}>
 									{item.name}
-									<button>Ver detalhes</button>
+									<button onClick={() => setCurrentEmployee(item)}>
+										Ver detalhes
+									</button>
 								</li>
 							))}
 						</ul>
 					)}
 
-					{!list && (
+					{!employeesList && (
 						<form onSubmit={(e) => e.preventDefault()}>
 							<h2>Cadastrar funcionário</h2>
 							<div className="input-container">
@@ -166,6 +171,29 @@ const Demo = () => {
 								Cadastrar
 							</Button>
 						</form>
+					)}
+					{currentEmployee && currentEmployee.registers.length > 0 && (
+						<S.EmployeeContainer>
+							<span
+								className="material-symbols-outlined close-employee"
+								onClick={() => setCurrentEmployee(undefined)}
+							>
+								cancel
+							</span>
+							<h3>{currentEmployee.name}</h3>
+							<h4>Code: {currentEmployee.code}</h4>
+							<h4>Employer: {currentEmployee.employer || "Admin"}</h4>
+							<ul>
+								{currentEmployee.registers.map((item: {}, index: number) => {
+									return (
+										<li key={index}>
+											<p>{Object.keys(item)}</p>
+											<p>{Object.values(item)}</p>
+										</li>
+									);
+								})}
+							</ul>
+						</S.EmployeeContainer>
 					)}
 				</S.Container>
 			</S.Demo>

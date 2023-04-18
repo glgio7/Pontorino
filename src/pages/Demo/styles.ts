@@ -65,6 +65,7 @@ export const Demo = styled.div`
 			left: 0;
 			transform: translateY(-100%);
 			transition: all 500ms;
+			z-index: 99;
 		}
 
 		nav.active {
@@ -135,6 +136,7 @@ export const Container = styled.section`
 	padding: 2rem;
 	overflow-y: auto;
 	background-position: center;
+	position: relative;
 
 	ul {
 		padding: 1rem;
@@ -238,5 +240,47 @@ export const Container = styled.section`
 		.renew-btn {
 			bottom: 0;
 		}
+	}
+`;
+
+export const EmployeeContainer = styled.div`
+	position: absolute;
+	top: 1rem;
+	bottom: 1rem;
+	left: 1rem;
+	right: 1rem;
+
+	padding: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background-color: #4d3180;
+
+	border-radius: 10px;
+
+	.close-employee {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+	}
+
+	h3 {
+		margin-bottom: 1rem;
+		color: #fff;
+	}
+
+	h4 {
+		color: #fff;
+		margin-block: 0.25rem;
+		font-weight: normal;
+		font-size: 0.75rem;
+	}
+
+	ul {
+		margin-top: 1rem;
+		display: flex;
+		flex-wrap: wrap;
 	}
 `;
