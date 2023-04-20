@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { IInfos } from "./types";
 import * as S from "./styles";
 import Form from "../../components/Form";
 import handleTimeClock from "../../services/actions/handleTimeClock";
 import Button from "../../components/Button";
-import { info } from "console";
 
 const currentDate = new Date()
 	.toLocaleDateString("pt-BR", {
@@ -13,31 +13,17 @@ const currentDate = new Date()
 	})
 	.replace(/\//g, "-");
 
-interface IInfos {
-	user: string;
-	pin: string;
-	status: string;
-}
-
 const ClockIn = () => {
-	// const [userCode, setUserCode] = useState<string>("");
-	// const [userPin, setUserPin] = useState<string>("");
 	const [currentTime, setCurrentTime] = useState<string>("Loading...");
 
-	const [rememberUser, setRememberUser] = useState<boolean>(true);
+	const [infos, setInfos] = useState<IInfos>({} as IInfos);
 
-	const [infos, setInfos] = useState<IInfos>({
-		user: "",
-		pin: "",
-		status: "0",
-	});
+	const [rememberUser, setRememberUser] = useState<boolean>(true);
 
 	const savedInfos = localStorage.getItem("infos");
 
 	useEffect(() => {
-		if (rememberUser) {
-			localStorage.setItem("infos", JSON.stringify(infos));
-		}
+		localStorage.setItem("infos", JSON.stringify(infos));
 	}, [infos]);
 
 	useEffect(() => {
@@ -62,7 +48,7 @@ const ClockIn = () => {
 				<Form>
 					<input
 						type={"text"}
-						value={infos.user}
+						value={infos.user ? infos.user : ""}
 						placeholder={"Employee's code"}
 						required
 						onChange={(e) => {
@@ -71,7 +57,7 @@ const ClockIn = () => {
 					/>
 					<input
 						type={"password"}
-						value={infos.pin}
+						value={infos.pin ? infos.pin : ""}
 						placeholder={"PIN"}
 						required
 						onChange={(e) => {
@@ -102,7 +88,9 @@ const ClockIn = () => {
 								infos.pin,
 								currentDate,
 								currentTime
-							).then(() => setInfos(savedInfos));
+							).then(() => {
+								setInfos(savedInfos);
+							});
 						}}
 					>
 						{infos.status === "1" ? "Sair" : "Entrar"}

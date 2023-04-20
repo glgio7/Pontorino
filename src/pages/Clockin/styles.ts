@@ -102,8 +102,8 @@ export const MainContainer = styled.div`
 	}
 
 	input[type="checkbox"] {
-		width: 20px;
-		height: 20px;
+		width: 1rem;
+		height: 1rem;
 		margin-right: 0.5rem;
 	}
 

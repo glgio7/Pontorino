@@ -30,6 +30,7 @@ const handleTimeClock = async (
 				window.alert("Not authorized.");
 			}
 		} catch (err) {
+			alert("Algum erro aconteceu");
 			console.error("Error updating document: ", err);
 		}
 	}
