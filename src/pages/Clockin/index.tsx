@@ -3,6 +3,7 @@ import * as S from "./styles";
 import Form from "../../components/Form";
 import handleTimeClock from "../../services/actions/handleTimeClock";
 import Button from "../../components/Button";
+import { info } from "console";
 
 const currentDate = new Date()
 	.toLocaleDateString("pt-BR", {
@@ -19,8 +20,8 @@ interface IInfos {
 }
 
 const ClockIn = () => {
-	const [userCode, setUserCode] = useState<string>("");
-	const [userPin, setUserPin] = useState<string>("");
+	// const [userCode, setUserCode] = useState<string>("");
+	// const [userPin, setUserPin] = useState<string>("");
 	const [currentTime, setCurrentTime] = useState<string>("Loading...");
 
 	const [rememberUser, setRememberUser] = useState<boolean>(true);
@@ -61,20 +62,20 @@ const ClockIn = () => {
 				<Form>
 					<input
 						type={"text"}
-						value={rememberUser ? infos.user : userCode}
+						value={infos.user}
 						placeholder={"Employee's code"}
 						required
 						onChange={(e) => {
-							setUserCode(e.target.value);
+							setInfos((prevState) => ({ ...prevState, user: e.target.value }));
 						}}
 					/>
 					<input
 						type={"password"}
-						value={rememberUser ? infos.pin : userPin}
+						value={infos.pin}
 						placeholder={"PIN"}
 						required
 						onChange={(e) => {
-							setUserPin(e.target.value);
+							setInfos((prevState) => ({ ...prevState, pin: e.target.value }));
 						}}
 					/>
 					<div className="check-container">
@@ -89,16 +90,19 @@ const ClockIn = () => {
 					<Button
 						className="handle-form__btn"
 						onClick={() => {
-							handleTimeClock(userCode, userPin, currentDate, currentTime);
 							const newStatus = infos.status === "1" ? "0" : "1";
 							const savedInfos = {
-								user: userCode,
-								pin: userPin,
+								user: infos.user,
+								pin: infos.pin,
 								status: newStatus,
 							};
-							if (rememberUser) {
-								setInfos(savedInfos);
-							}
+
+							handleTimeClock(
+								infos.user,
+								infos.pin,
+								currentDate,
+								currentTime
+							).then(() => setInfos(savedInfos));
 						}}
 					>
 						{infos.status === "1" ? "Sair" : "Entrar"}
