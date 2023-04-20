@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from "./styles";
 import Form from "../../components/Form";
 import handleTimeClock from "../../services/actions/handleTimeClock";
@@ -16,6 +16,14 @@ const ClockIn = () => {
 	const [userCode, setUserCode] = useState<string>("");
 	const [userPin, setUserPin] = useState<string>("");
 	const [currentTime, setCurrentTime] = useState<string>("Loading...");
+
+	const [status, setStatus] = useState<string>("0");
+
+	useEffect(() => {
+		const savedStatus = localStorage.getItem("status");
+
+		if (savedStatus) setStatus(savedStatus);
+	}, []);
 
 	const getCurrentTime = (): void => {
 		const currentTime = new Date().toLocaleTimeString("pt-BR", {
@@ -51,11 +59,16 @@ const ClockIn = () => {
 					/>
 					<Button
 						className="handle-form__btn"
-						onClick={() =>
-							handleTimeClock(userCode, userPin, currentDate, currentTime)
-						}
+						onClick={() => {
+							handleTimeClock(userCode, userPin, currentDate, currentTime);
+							const newStatus = status === "0" ? "1" : "0";
+
+							setStatus(newStatus);
+
+							localStorage.setItem("status", newStatus);
+						}}
 					>
-						REGISTER
+						{status === "1" ? "Sair" : "Entrar"}
 					</Button>
 				</Form>
 
