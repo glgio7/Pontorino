@@ -41,6 +41,7 @@ const Demo = () => {
 			action: () => {
 				setEmployeesList(undefined);
 				setMenuMobile(false);
+				setCurrentEmployee(undefined);
 			},
 		},
 	];

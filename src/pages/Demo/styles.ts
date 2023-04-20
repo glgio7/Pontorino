@@ -249,6 +249,7 @@ export const EmployeeContainer = styled.div`
 	bottom: 1rem;
 	left: 1rem;
 	right: 1rem;
+	overflow-y: auto;
 
 	padding: 1rem;
 
@@ -261,6 +262,10 @@ export const EmployeeContainer = styled.div`
 	border-radius: 10px;
 
 	.close-employee {
+		cursor: pointer;
+
+		font-size: 2rem;
+
 		position: absolute;
 		right: 1rem;
 		top: 1rem;
@@ -280,6 +285,8 @@ export const EmployeeContainer = styled.div`
 
 	ul {
 		margin-top: 1rem;
+		width: 100%;
+		height: max-content;
 		display: flex;
 		flex-wrap: wrap;
 	}
