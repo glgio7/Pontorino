@@ -93,6 +93,20 @@ export const MainContainer = styled.div`
 
 		font-size: 10px;
 	}
+
+	.check-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	input[type="checkbox"] {
+		width: 20px;
+		height: 20px;
+		margin-right: 0.5rem;
+	}
+
 	@media screen and (max-width: 1024px) {
 		width: 80%;
 

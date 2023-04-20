@@ -12,17 +12,35 @@ const currentDate = new Date()
 	})
 	.replace(/\//g, "-");
 
+interface IInfos {
+	user: string;
+	pin: string;
+	status: string;
+}
+
 const ClockIn = () => {
 	const [userCode, setUserCode] = useState<string>("");
 	const [userPin, setUserPin] = useState<string>("");
 	const [currentTime, setCurrentTime] = useState<string>("Loading...");
 
-	const [status, setStatus] = useState<string>("0");
+	const [rememberUser, setRememberUser] = useState<boolean>(true);
+
+	const [infos, setInfos] = useState<IInfos>({
+		user: "",
+		pin: "",
+		status: "0",
+	});
+
+	const savedInfos = localStorage.getItem("infos");
 
 	useEffect(() => {
-		const savedStatus = localStorage.getItem("status");
+		if (rememberUser) {
+			localStorage.setItem("infos", JSON.stringify(infos));
+		}
+	}, [infos]);
 
-		if (savedStatus) setStatus(savedStatus);
+	useEffect(() => {
+		if (savedInfos) setInfos(JSON.parse(savedInfos));
 	}, []);
 
 	const getCurrentTime = (): void => {
@@ -43,6 +61,7 @@ const ClockIn = () => {
 				<Form>
 					<input
 						type={"text"}
+						value={rememberUser ? infos.user : userCode}
 						placeholder={"Employee's code"}
 						required
 						onChange={(e) => {
@@ -51,24 +70,38 @@ const ClockIn = () => {
 					/>
 					<input
 						type={"password"}
+						value={rememberUser ? infos.pin : userPin}
 						placeholder={"PIN"}
 						required
 						onChange={(e) => {
 							setUserPin(e.target.value);
 						}}
 					/>
+					<div className="check-container">
+						<input
+							type="checkbox"
+							id="check"
+							checked={rememberUser}
+							onChange={(e) => setRememberUser(e.target.checked)}
+						/>
+						<label htmlFor="check">Lembrar dados</label>
+					</div>
 					<Button
 						className="handle-form__btn"
 						onClick={() => {
 							handleTimeClock(userCode, userPin, currentDate, currentTime);
-							const newStatus = status === "0" ? "1" : "0";
-
-							setStatus(newStatus);
-
-							localStorage.setItem("status", newStatus);
+							const newStatus = infos.status === "1" ? "0" : "1";
+							const savedInfos = {
+								user: userCode,
+								pin: userPin,
+								status: newStatus,
+							};
+							if (rememberUser) {
+								setInfos(savedInfos);
+							}
 						}}
 					>
-						{status === "1" ? "Sair" : "Entrar"}
+						{infos.status === "1" ? "Sair" : "Entrar"}
 					</Button>
 				</Form>
 

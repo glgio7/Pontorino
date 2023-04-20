@@ -6,7 +6,6 @@ import { addEmployee, getEmployees } from "../../services/database/employees";
 import { DocumentData } from "firebase/firestore";
 import { AuthContext } from "../../contexts/AuthContext";
 import { v4 as uuidv4 } from "uuid";
-import { FormData } from "../../services/actions/types";
 
 const Demo = () => {
 	const [menuMobile, setMenuMobile] = useState<boolean>(false);
