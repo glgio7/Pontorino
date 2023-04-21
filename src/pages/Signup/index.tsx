@@ -4,19 +4,17 @@ import Form, { validatePassword } from "../../components/Form";
 import Button from "../../components/Button";
 import { useState } from "react";
 import handleRegister from "../../services/actions/handleRegister";
+import { IUserInfo } from "./types";
 
 const Signup = () => {
-	const [name, setName] = useState<string>("");
+	const [userInfo, setUserInfo] = useState<IUserInfo>({} as IUserInfo);
 
-	const [email, setEmail] = useState<string>("");
-
-	const [password, setPassword] = useState<string>("");
 	const [passwordConfirmation, setPasswordConfirmation] = useState<string>("");
 	const [passwordError, setPasswordError] = useState<string>("");
 
-	const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const password = event.target.value;
-		setPassword(password);
+	const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const password = e.target.value;
+		setUserInfo((prevState) => ({ ...prevState, password: e.target.value }));
 
 		if (!validatePassword(password)) {
 			setPasswordError(
@@ -51,25 +49,31 @@ const Signup = () => {
 
 				<Form>
 					<input
-						value={name}
+						value={userInfo.name}
 						type={"text"}
 						placeholder={"Nome e sobrenome"}
 						required
 						onChange={(e) => {
-							setName(e.target.value);
+							setUserInfo((prevState) => ({
+								...prevState,
+								name: e.target.value,
+							}));
 						}}
 					/>
 					<input
-						value={email}
+						value={userInfo.email}
 						type={"text"}
 						placeholder={"Email"}
 						required
 						onChange={(e) => {
-							setEmail(e.target.value);
+							setUserInfo((prevState) => ({
+								...prevState,
+								email: e.target.value,
+							}));
 						}}
 					/>
 					<input
-						value={password}
+						value={userInfo.password}
 						type={"password"}
 						placeholder={"Password"}
 						required
@@ -87,12 +91,12 @@ const Signup = () => {
 					{passwordError && <p>{passwordError}</p>}
 					<Button
 						className={
-							password === passwordConfirmation
+							userInfo.password === passwordConfirmation
 								? "handle-form__btn"
 								: "handle-form__btn disabled"
 						}
 						onClick={() => {
-							handleRegister({ name, email, password });
+							handleRegister(userInfo);
 						}}
 					>
 						REGISTER
